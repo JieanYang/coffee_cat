@@ -26,6 +26,10 @@ module.exports = {
       filename: "./index.html"
     })
   ],
+  entry: {
+    js: ["babel-polyfill", './src/index.js'],
+    vendor: ['react']
+  }, 
   devServer: {
     host: '0.0.0.0',
     port: 3000,
