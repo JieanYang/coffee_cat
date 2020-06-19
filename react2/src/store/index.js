@@ -1,10 +1,10 @@
 // src/js/store/index.js
 
 import { createStore, applyMiddleware, compose } from "redux";
-import rootReducer from "../reducers/index";
-import { forbiddenWordsMiddleware } from "../middleware";
+import rootReducer from "./reducers/index";
+import { forbiddenWordsMiddleware } from "./middleware";
 import createSagaMiddleware from "redux-saga";
-import apiSaga from "../sagas/api-sage";
+import apiSaga from "./sagas/api-sage";
 import { createLogger } from 'redux-logger';
 
 const initialiseSagaMiddleware = createSagaMiddleware();

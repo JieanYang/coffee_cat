@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getData } from "../actions/index";
+import { getData } from "../../store/actions";
 
 export class Post extends Component {
   constructor(props) {
