@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server --open --config webpack.dev.conf.js",
-    "build": "webpack --mode production"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -29,9 +29,11 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack-merge": "^4.2.2"
   }
 }
