@@ -1,4 +1,4 @@
-// src/js/reducers/index.js
+// src/store/reducers/index.js
 
 import { ADD_ARTICLE, DATA_LOADED } from "../constants/action-types";
 

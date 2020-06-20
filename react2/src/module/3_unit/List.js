@@ -1,4 +1,4 @@
-// src/js/components/List.js
+// src/module/3_unit/List.js
 
 import React from "react";
 import { connect } from "react-redux";
@@ -9,8 +9,8 @@ const mapStateToProps = state => {
 
 const ConnectedList = ({ articles }) => (
   <ul>
-    {articles.map(el => (
-      <li key={el.id}>{el.title}</li>
+    {articles.map((el, index) => (
+      <li key={index}>{el.title}</li>
     ))}
   </ul>
 );
