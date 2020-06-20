@@ -9,11 +9,13 @@ import {
 } from "react-router-dom";
 
 
-import Article from "./1_page/Article"
+import Header from "./2_component/Header";
+import Article from "./1_page/Article";
 
 const App = () => (
   <>
     <Router>
+      <Header />
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>

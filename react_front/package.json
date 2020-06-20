@@ -28,6 +28,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "cross-env": "^7.0.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react": "^16.13.1",
