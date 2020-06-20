@@ -13,4 +13,7 @@ render(
   document.getElementById("root")
 );
 
-console.warn("APP_NODE_ENV: ", APP_NODE_ENV);
+
+console.log("================================");
+console.log("APP_NODE_ENV: ", APP_NODE_ENV);
+console.log("================================");
