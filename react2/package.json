@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "start": "cross-env NODE_ENV=dev webpack-dev-server --open --config webpack.dev.conf.js",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -28,8 +28,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "cross-env": "^7.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "webpack-merge": "^4.2.2"
   }
 }

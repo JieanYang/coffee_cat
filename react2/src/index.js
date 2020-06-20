@@ -12,3 +12,5 @@ render(
   </Provider>,
   document.getElementById("root")
 );
+
+console.warn("APP_NODE_ENV: ", APP_NODE_ENV);
