@@ -27,7 +27,7 @@ const App = () => (
       <div>
         <Switch>
           <Route path="/about"><h2>About yang</h2></Route>
-          <Route path="/users"><h2>Users yang</h2></Route>
+          <Route path="/contact"><h2>Contact yang</h2></Route>
           <Route path="/article"><Article /></Route>
           <Route path="/"><h2>Home yang</h2></Route>
         </Switch>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faSearch, faEnvelope, faGlobe, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faEnvelope, faGlobe, faSearch} from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
 
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 export default function Header() {
 	return (
 		<>
+
 			<nav className="icon-bar">
 			  <Link className="active" to="/">
 			  	Home
