@@ -16,15 +16,7 @@ const App = () => (
   <>
     <Router>
       <Header />
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/users">Users</Link></li>
-          <li><Link to="/article">Articles</Link></li>
-        </ul>
-      </nav>
-      <div>
+      <div id="page_content" style={{paddingTop: "170px"}}>
         <Switch>
           <Route path="/about"><h2>About yang</h2></Route>
           <Route path="/contact"><h2>Contact yang</h2></Route>
