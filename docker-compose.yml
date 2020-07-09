@@ -1,5 +1,18 @@
 version: '3'
+
 services:
+  django:
+    build: 
+      context: ./django_react
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./django_react/:/usr/src/app/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:latest
     container_name: postgres
