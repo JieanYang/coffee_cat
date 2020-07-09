@@ -5,7 +5,7 @@ create user me with password 'me';
 -- 创建db设置owner为test_user
 create database db with owner me;
 
--- 切换到新创建的test_db数据库
+-- 作为用户me,切换到新创建的db数据库
 \c db me;
 
 -- 在新创建的数据库中创建表
