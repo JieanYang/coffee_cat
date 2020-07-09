@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   django:
+    container_name: back
     build: 
       context: ./django_react
       dockerfile: Dockerfile
@@ -16,7 +17,7 @@ services:
       - postgres
 
   postgres:
-    container_name: postgres
+    container_name: db
     build:
       context: ./postgres
       dockerfile: Dockerfile

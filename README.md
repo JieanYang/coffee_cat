@@ -8,8 +8,10 @@ Settting to connect PostgreSQL in Django https://docs.djangoproject.com/en/3.0/r
 
 commands:  
 ```
-$ docker-compose up -d --build
 $ docker-compose down -v
+
+$ docker-compose up -d --build
+$ docker-compose logs -f
 
 $ docker-compose exec django python manage.py flush --no-input
 $ docker-compose exec django python manage.py migrate

@@ -12,7 +12,7 @@ services:
       - django
 
   django:
-    container_name: django_react
+    container_name: back
     build: 
       context: ./django_react
       dockerfile: Dockerfile.prod
@@ -25,7 +25,7 @@ services:
       - postgres
 
   postgres:
-    container_name: postgres
+    container_name: db
     build:
       context: ./postgres
       dockerfile: Dockerfile
