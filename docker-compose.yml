@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 
 services:
   django:
@@ -16,18 +16,16 @@ services:
       - postgres
 
   postgres:
-    # image: postgres:latest
     container_name: postgres
     build:
       context: ./postgres
       dockerfile: Dockerfile
-    # restart: always
-    # privileged: true
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=me
+      - POSTGRES_PASSWORD=me
+      - POSTGRES_DB=db
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
