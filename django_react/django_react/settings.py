@@ -73,12 +73,26 @@ WSGI_APPLICATION = 'django_react.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# SQLite
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# PostgreSQL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db',
+        'USER': 'me',
+        'PASSWORD': 'me',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
