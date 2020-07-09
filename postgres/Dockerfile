@@ -1,4 +1,4 @@
-# FROM postgres:9.6
+FROM postgres:9.6
 
 # run create.sql on init
 # COPY create.sql /docker-entrypoint-initdb.d
