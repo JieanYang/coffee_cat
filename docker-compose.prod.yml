@@ -26,7 +26,7 @@ services:
     expose:
       - "8000"
     env_file:
-      - ./django_back/.env.prod
+      - ./.env.prod
     depends_on:
       - postgres
 
