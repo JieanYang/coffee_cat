@@ -17,16 +17,16 @@ services:
   django:
     container_name: back
     build: 
-      context: ./django_react
+      context: ./django_back
       dockerfile: Dockerfile.prod
-    command: gunicorn django_react.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn django_back.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/backend/staticfiles
       - media_volume:/home/app/backend/mediafiles
     expose:
       - "8000"
     env_file:
-      - ./django_react/.env.prod
+      - ./django_back/.env.prod
     depends_on:
       - postgres
 
