@@ -1,0 +1,69 @@
+version: '3.7'
+
+services:
+  nginx-proxy-letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    env_file:
+      - .env.staging.proxy-companion
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - certs:/etc/nginx/certs
+      - html:/usr/share/nginx/html
+      - vhost:/etc/nginx/vhost.d
+    depends_on:
+      - nginx-proxy
+
+  nginx-proxy:
+    container_name: nginx-proxy
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - static_volume:/home/app/backend/staticfiles
+      - media_volume:/home/app/backend/mediafiles
+      - certs:/etc/nginx/certs
+      - html:/usr/share/nginx/html
+      - vhost:/etc/nginx/vhost.d
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    depends_on:
+      - django
+
+  django:
+    container_name: back
+    build:
+      context: ./django_back
+      dockerfile: Dockerfile.prod
+    command: gunicorn django_back.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/home/app/backend/staticfiles
+      - media_volume:/home/app/backend/mediafiles
+    expose:
+      - "8000"
+    env_file:
+      - ./.env.staging
+    depends_on:
+      - db
+
+  postgres:
+    container_name: db
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env.staging.db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+  certs:
+  html:
+  vhost:
