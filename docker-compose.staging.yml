@@ -17,7 +17,7 @@ services:
     container_name: nginx-proxy
     build:
       context: ./nginx
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.staging
     restart: always
     ports:
       - 443:443
