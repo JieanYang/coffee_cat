@@ -46,7 +46,7 @@ services:
     env_file:
       - ./.env.staging
     depends_on:
-      - db
+      - postgres
 
   postgres:
     container_name: db
