@@ -30,8 +30,12 @@ $ docker-compose -f docker-compose.prod.yml exec django python manage.py migrate
 $ docker-compose -f docker-compose.prod.yml exec django python manage.py collectstatic --no-input --clear
 ```
 
+How to Install and Use Docker on Ubuntu 18.04 https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-18-04/
+
 Commands AWS:
 ```
 ssh -i [/path/my-key-pair.pem] [my-instance-user-name@my-instance-public-dns-name]
 scp -i [/path/my-key-pair.pem] [/path/SampleFile.txt my-instance-user-name@my-instance-public-dns-name:~]
+
+scp -r $(pwd)/{django_back,nginx,.env.staging,.env.staging.db,.env.staging.proxy-companion,docker-compose.staging.yml} [user@your-ip-or-domain:/path/to/django-on-docker]
 ```
