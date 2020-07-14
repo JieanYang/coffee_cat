@@ -18,6 +18,7 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile.staging
+    image: 350391359000.dkr.ecr.eu-west-3.amazonaws.com/coffee_cat_ec2:nginx-proxy
     restart: always
     ports:
       - 443:443
@@ -37,6 +38,7 @@ services:
     build:
       context: ./django_back
       dockerfile: Dockerfile.prod
+    image: 350391359000.dkr.ecr.eu-west-3.amazonaws.com/coffee_cat_ec2:backend
     command: gunicorn django_back.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/backend/staticfiles
@@ -44,24 +46,9 @@ services:
     expose:
       - "8000"
     env_file:
-      - ./.env.staging
-    depends_on:
-      - postgres
-
-  postgres:
-    container_name: db
-    build:
-      context: ./postgres
-      dockerfile: Dockerfile
-    ports:
-      - "5432:5432"
-    env_file:
-      - .env.staging.db
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - .env.staging
 
 volumes:
-  postgres_data:
   static_volume:
   media_volume:
   certs:
