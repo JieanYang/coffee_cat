@@ -1,5 +1,7 @@
 __pycache__
 .DS_Store
 
+
+**/.env.staging
 **/.env.prod
 **/.env.prod.db
