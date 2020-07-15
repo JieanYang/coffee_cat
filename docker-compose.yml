@@ -4,10 +4,10 @@ services:
   react:
     container_name: front
     build:
-      context: ./react2
+      context: ./react_front
       dockerfile: Dockerfile
     volumes:
-      - ./react2:/usr/src/app/
+      - ./react_front:/usr/src/app/
     ports:
       - "3000:3000"
     depends_on:
