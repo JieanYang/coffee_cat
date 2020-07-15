@@ -32,6 +32,8 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
+# USE_X_FORWARDED_HOST = True
+# FORCE_SCRIPT_NAME = "/api"
 
 # Application definition
 
@@ -137,8 +139,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = "/staticfiles/"
+STATIC_URL = "/api/staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-MEDIA_URL = "/mediafiles/"
+MEDIA_URL = "/api/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
