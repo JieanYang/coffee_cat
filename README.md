@@ -3,6 +3,13 @@
 Run PostgreSQL in Docker https://www.saltycrane.com/blog/2019/01/how-run-postgresql-docker-mac-local-development/
 
 
+nginx-proxy/nginx-proxy https://github.com/nginx-proxy/nginx-proxy
+nginx-proxy/docker-letsencrypt-nginx-proxy-companion https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion
+
+
+React Redux Tutorial for Beginners: The Complete Guide (2020) https://www.valentinog.com/blog/redux/
+Webpack配置区分开发环境和生产环境 https://juejin.im/post/5da67a0251882559ba681829
+
 ```pip3 install psycopg2-binary``` Install psycopg2 in MacOs, connect Django with PostgreSQL  
 Settting to connect PostgreSQL in Django https://docs.djangoproject.com/en/3.0/ref/settings/
 
