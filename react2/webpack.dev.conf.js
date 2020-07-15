@@ -7,10 +7,13 @@ module.exports = merge(base, {
 	mode: "development",
 	devServer: {
 		contentBase: './dist',
+		host: '0.0.0.0',
 		port: '3000',
 		inline: true,
 		historyApiFallback: true,
-		hot: true
+		hot: true,
+		overlay: true,
+    	open: true
 	},
 	devtool: 'source-map',
 	plugins: [
