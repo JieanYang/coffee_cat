@@ -2,5 +2,6 @@
 
 
 **/.env.staging
+**/.env.staging.react
 **/.env.prod
 **/.env.prod.db
