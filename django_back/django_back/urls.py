@@ -24,7 +24,7 @@ urlpatterns = [
     path("", image_upload, name="upload"),
     path('admin/', admin.site.urls),
 ]
-urlpatterns = [path(r'api/', include(urlpatterns))]
+# urlpatterns = [path(r'api/', include(urlpatterns))]
 
 if bool(settings.DEBUG):
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
