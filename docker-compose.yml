@@ -15,9 +15,7 @@ services:
     container_name: front
     build:
       context: ./react_front
-      dockerfile: Dockerfile.staging
-    # volumes:
-    #   - ./react_front:/usr/src/app/
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     depends_on:
