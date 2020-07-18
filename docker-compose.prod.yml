@@ -31,6 +31,19 @@ services:
       - vhost:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
     depends_on:
+      - react
+
+  react:
+    container_name: front
+    build:
+      context: ./react_front
+      dockerfile: Dockerfile.staging
+    image: 350391359000.dkr.ecr.eu-west-3.amazonaws.com/coffee_cat_ec2:front
+    expose:
+      - "3000"
+    env_file:
+      - .env.staging.react
+    depends_on:
       - django
 
   django:
