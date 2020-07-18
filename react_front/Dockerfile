@@ -9,6 +9,9 @@ WORKDIR /usr/src/app
 # Copies package.json and package-lock.json to Docker environment
 COPY package*.json ./
  
+# ENV PATH adds node_modules in the PATH
+# ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
 # Installs all node packages
 RUN npm install
  
