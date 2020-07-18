@@ -13,7 +13,7 @@ COPY package*.json ./
 # ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # Installs all node packages
-RUN npm install
+# RUN npm install
  
 # Copies everything over to Docker environment
 COPY . .
