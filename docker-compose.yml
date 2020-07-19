@@ -17,7 +17,8 @@ services:
       context: ./react_front
       dockerfile: Dockerfile
     volumes:
-      - ./react_front/:/usr/src/app/
+      - ./react_front/node_modules/:/usr/src/app/node_modules/
+      - ./react_front/src:/usr/src/app/src/
     ports:
       - "3000:3000"
     depends_on:

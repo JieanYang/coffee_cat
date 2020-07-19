@@ -18,10 +18,10 @@ const App = () => (
       <Header />
       <div id="page_content" style={{paddingTop: "170px"}}>
         <Switch>
-          <Route path="/about"><h2>About yang</h2></Route>
-          <Route path="/contact"><h2>Contact yang</h2></Route>
+          <Route path="/about"><h2>About</h2></Route>
+          <Route path="/contact"><h2>Contact</h2></Route>
           <Route path="/article"><Article /></Route>
-          <Route path="/"><h2>Home yang</h2></Route>
+          <Route path="/"><h2>Home</h2></Route>
         </Switch>
       </div>
     </Router>
