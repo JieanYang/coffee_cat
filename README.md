@@ -74,3 +74,12 @@ aws ecr get-login-password --region eu-west-3 | docker login --username AWS --pa
 Instance with role:
 aws ecr get-login-password --region eu-west-3 | docker login --username AWS --password-stdin <aws-account-id>.dkr.ecr.eu-west-3.amazonaws.com
 ```
+
+Django:
+```
+python manage.py createsuperuser
+python manage.py collectstatic --no-input --clear
+
+python manage.py flush --no-input
+python manage.py migrate
+```
