@@ -19,9 +19,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from modules.upload.views import image_upload
+from modules.User.urls import urlpatterns as User_urls
 
 urlpatterns = [
-    path("", image_upload, name="upload"),
+    path('User/', include(User_urls)),
+    path('', image_upload, name='upload'),
     path('admin/', admin.site.urls),
 ]
 # urlpatterns = [path(r'api/', include(urlpatterns))]
