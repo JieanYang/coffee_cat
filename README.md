@@ -77,6 +77,10 @@ aws ecr get-login-password --region eu-west-3 | docker login --username AWS --pa
 
 Django:
 ```
+Project
+python3 -m django startproject projectname
+python3 manage.py startapp appname
+
 Authentication
 python manage.py createsuperuser
 python manage.py *username*
