@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faEnvelope, faUserAlt, faAlignLeft } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
 import '../../style/2_component/Header.scss'
@@ -38,7 +38,7 @@ export default function Header() {
 					  	Home
 					</Link> 
 					<Link to="/about">
-						<FontAwesomeIcon icon={faUserAlt} color="green" />
+						<FontAwesomeIcon icon={faInfoCircle} color="green" />
 						About
 					</Link>
 					<Link to="/contact">
@@ -48,6 +48,10 @@ export default function Header() {
 					<Link to="/article">
 						<FontAwesomeIcon icon={faAlignLeft} color="green" />
 						Article
+					</Link>
+					<Link to="/login">
+						<FontAwesomeIcon icon={faUser} color="green" />
+						Login
 					</Link>
 				</div>
 			  {/*<Link className="active" to="/">

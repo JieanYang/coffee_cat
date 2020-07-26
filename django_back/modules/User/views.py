@@ -5,9 +5,12 @@ from django.http import HttpResponse
 
 
 def login(request):
+	username = request.POST['username']
+	password = request.POST['password']
 	print('yang')
-	username = 'admin'
-	password = 'admin'
+	print(username)
+	print(password)
+	print('end yang')
 	user = authenticate(request, username=username, password=password)
 	if user is not None:
 		dj_login(request, user)
