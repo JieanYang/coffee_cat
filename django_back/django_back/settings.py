@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+    'corsheaders',
+    
     'modules.upload',
-    'modules.User',
-    'rest_framework'
+    'modules.User'
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'django_back.urls'
@@ -91,6 +96,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
 }
+
+# CORS setting
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+]
 
 
 # Database
