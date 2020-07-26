@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'modules.upload',
-    'modules.User'
+    'modules.User',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -79,6 +80,17 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_back.wsgi.application'
+
+# Rest Framwork
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
 
 
 # Database
