@@ -1,5 +1,7 @@
 // src/js/actions/index.js
 
+export * from './auth';
+
 import { ADD_ARTICLE, DATA_LOADED } from "../constants/action-types";
 
 export function addArticle(payload) {
