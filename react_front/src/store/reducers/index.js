@@ -5,7 +5,7 @@ import auth, * as fromAuth from './auth.js'
 
 import { ADD_ARTICLE, DATA_LOADED } from "../constants/action-types";
 
-const articlesReducer = (state = [], action) => {
+const articlesReducer = (state=[], action) => {
   switch(action.type) {
     case ADD_ARTICLE:
       return Object.assign({}, state, {
@@ -16,7 +16,7 @@ const articlesReducer = (state = [], action) => {
   }
 }
 
-const remoteArticlesReducer = (state = [], action) => {
+const remoteArticlesReducer = (state=[], action) => {
   switch(action.type) {
     case DATA_LOADED:
       return Object.assign({}, state, {
