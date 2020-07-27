@@ -13,6 +13,7 @@ import Header from "./2_component/Header";
 import PrivateRoute from "./2_component/PrivateRoute";
 import Article from "./1_page/Article";
 import Login from "./1_page/Login";
+import Home from "./1_page/Home";
 
 const App = () => (
   <>
@@ -24,7 +25,7 @@ const App = () => (
           <PrivateRoute path="/about/" component={() => <h2>About</h2>} />
           <PrivateRoute path="/contact/" component={() => <h2>contact</h2>} />
           <PrivateRoute path="/article/" component={Article} />
-          <PrivateRoute path="/" component={() => <h2>Home</h2>} />
+          <PrivateRoute path="/" component={Home} />
         </Switch>
       </div>
     </Router>
