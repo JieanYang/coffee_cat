@@ -6,15 +6,19 @@ import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import auth, * as fromAuth from './auth.js'
 
+
+import { connectRouter } from 'connected-react-router'
+
 import { articlesReducer, remoteArticlesReducer } from './article.js';
 
-
-export default combineReducers({
+const createRootReducer = (history) => combineReducers({
   auth: auth,
-  router: routerReducer, 
+  router: connectRouter(history), 
   articles: articlesReducer, 
   remoteArticles: remoteArticlesReducer
 })
+
+export default createRootReducer
 
 export const isAuthenticated = state => fromAuth.isAuthenticated(state.auth)
 export const accessToken = state => fromAuth.accessToken(state.auth)
