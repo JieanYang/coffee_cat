@@ -38,11 +38,11 @@ export default function configureStore(preloadedState={}) {
 	  reducer, preloadedState,
 	  storeEnhancers(
 	    applyMiddleware(
-	    	createLogger(), 
-	    	apiMiddleware,
 	    	routerMiddleware(history),
+	    	apiMiddleware,
 	    	forbiddenWordsMiddleware, 
-	    	initialiseSagaMiddleware
+	    	initialiseSagaMiddleware,
+	    	createLogger(), 
 	    )
 	  )
 	)
