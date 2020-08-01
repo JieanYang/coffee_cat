@@ -10,6 +10,11 @@ nginx-proxy/docker-letsencrypt-nginx-proxy-companion https://github.com/nginx-pr
 React Redux Tutorial for Beginners: The Complete Guide (2020) https://www.valentinog.com/blog/redux/  
 Webpack配置区分开发环境和生产环境 https://juejin.im/post/5da67a0251882559ba681829
 
+Authentication Django and React with JWT:  
+https://medium.com/netscape/full-stack-django-quick-start-with-jwt-auth-and-react-redux-part-i-37853685ab57  
+https://medium.com/@viewflow/full-stack-django-quick-start-with-jwt-auth-and-react-redux-part-ii-be9cf6942957  
+https://medium.com/@viewflow/full-stack-django-quick-start-with-jwt-auth-and-react-redux-part-iii-873584a65119  
+
 ```pip3 install psycopg2-binary``` Install psycopg2 in MacOs, connect Django with PostgreSQL  
 Settting to connect PostgreSQL in Django https://docs.djangoproject.com/en/3.0/ref/settings/
 
