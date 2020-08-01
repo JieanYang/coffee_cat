@@ -7,7 +7,7 @@ import {serverMessage} from '../../store/reducers'
 class App extends Component {
 
   componentDidMount() {
-      this.props.fetchMessage('Hi!')
+      this.props.fetchMessage('Hi, yang!')
   }
   
   render() {
