@@ -1,4 +1,3 @@
-// src/module/1_page/Article.js
 
 import React, { useState } from "react";
 import { connect } from 'react-redux';
