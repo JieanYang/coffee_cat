@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {echo} from '../../store/actions/echo'
-import {serverMessage} from '../../store/reducers'
+import {echo} from '../../../store/actions/echo'
+import {serverMessage} from '../../../store/reducers'
 
 
 class App extends Component {

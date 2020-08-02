@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addArticle } from "../../store/actions";
+import { addArticle } from "../../../store/actions";
 
 function mapDispatchToProps(dispatch) {
   return {

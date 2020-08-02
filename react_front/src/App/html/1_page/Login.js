@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router'
 
 import LoginForm from '../2_component/LoginForm';
-import {login} from '../../store/actions/auth';
+import {login} from '../../../store/actions/auth';
 
-import {authErrors, isAuthenticated} from '../../store/reducers';
+import {authErrors, isAuthenticated} from '../../../store/reducers';
 
 const my_login = () => {
 	const [userState, setUserState] = useState("no connect");

@@ -9,11 +9,11 @@ import {
 } from "react-router-dom";
 
 
-import PrivateRoute from "./4_base/PrivateRoute";
-import Header from "./2_component/Header";
-import Article from "./1_page/Article";
-import Login from "./1_page/Login";
-import Home from "./1_page/Home";
+import PrivateRoute from "./html/4_base/PrivateRoute";
+import Header from "./html/2_component/Header";
+import Article from "./html/1_page/Article";
+import Login from "./html/1_page/Login";
+import Home from "./html/1_page/Home";
 
 const App = () => (
   <>
