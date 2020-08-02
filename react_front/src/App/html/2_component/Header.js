@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
-import '../../../style/2_component/Header.scss'
+import '../../style/2_component/Header.scss'
 
 export default function Header() {
 	// const [scrolling, setScrolling] = useState(false);
