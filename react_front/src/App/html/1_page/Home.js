@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {echo} from '../../../store/actions/echo'
-import {serverMessage} from '../../../store/reducers'
+import { echo } from '../../../store/actions/echo'
 
 
 class App extends Component {
@@ -21,6 +20,6 @@ class App extends Component {
 }
 
 export default connect(
-  state => ({ message: serverMessage(state) }),
+  state => ({ message: state.echo.message }),
   { fetchMessage: echo }
 )(App);

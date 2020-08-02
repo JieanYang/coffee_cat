@@ -4,7 +4,7 @@ const initialState = {
   message: ""
 }
 
-export default (state=initialState, action) => {
+export const echoReducer = (state=initialState, action) => {
   switch(action.type) {
     case echo.ECHO_SUCCESS:
       return {
@@ -14,5 +14,3 @@ export default (state=initialState, action) => {
       return state
   }
 }
-
-export const serverMessage = (state) => state.message

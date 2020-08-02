@@ -1,18 +1,15 @@
 
 export * from './auth'
+export * from './echo'
 
 import { combineReducers } from 'redux'
-import { authReducer } from '../reducers'
-import echo, * as fromEcho from './echo'
-
-
 import { connectRouter } from 'connected-react-router'
-
+import { authReducer, echoReducer } from '../reducers'
 import { articlesReducer, remoteArticlesReducer } from './article.js';
 
 const createRootReducer = (history) => combineReducers({
   auth: authReducer,
-  echo: echo,
+  echo: echoReducer,
   router: connectRouter(history), 
   articles: articlesReducer, 
   remoteArticles: remoteArticlesReducer,
@@ -20,4 +17,3 @@ const createRootReducer = (history) => combineReducers({
 
 export default createRootReducer
 
-export const serverMessage = state => fromEcho.serverMessage(state.echo)
