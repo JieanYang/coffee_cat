@@ -46,10 +46,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5432:5432"
-    environment:
-      - POSTGRES_USER=me
-      - POSTGRES_PASSWORD=me
-      - POSTGRES_DB=db
+    env_file:
+      - ./.env.dev.db
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
