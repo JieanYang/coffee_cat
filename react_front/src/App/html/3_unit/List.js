@@ -1,4 +1,3 @@
-// src/module/3_unit/List.js
 
 import React from "react";
 import { connect } from "react-redux";

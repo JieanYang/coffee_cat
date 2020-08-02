@@ -1,10 +1,11 @@
-// src/js/middleware
+
+export * from './ApiMiddleware'
 
 import { ADD_ARTICLE } from "../constants/action-types";
 
 const forbiddenWords = ["spam", "money"];
 
-export function forbiddenWordsMiddleware({ dispatch }) {
+export const forbiddenWordsMiddleware = ({ dispatch }) => {
   return function(next) {
     return function(action) {
       // do your stuff

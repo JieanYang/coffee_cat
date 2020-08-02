@@ -1,4 +1,3 @@
-// src/module/1_page/Article.js
 
 import React from "react";
 

@@ -1,8 +1,8 @@
-// src/js/actions/index.js
 
-export * from './auth';
+export * from './auth'
+export * from './echo'
 
-import { ADD_ARTICLE, DATA_LOADED } from "../constants/action-types";
+import { ADD_ARTICLE, DATA_LOADED } from "../constants/action-types"
 
 export function addArticle(payload) {
   return { type: ADD_ARTICLE, payload }

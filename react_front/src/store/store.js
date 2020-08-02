@@ -1,14 +1,14 @@
 
 // auth
 import storage from 'redux-persist/es/storage'
-import apiMiddleware from './middleware/apiMiddleware';
+import { apiMiddleware } from './middleware';
 import { createFilter   } from 'redux-persist-transform-filter';
 import { persistReducer, persistStore } from 'redux-persist'
 import { routerMiddleware } from 'react-router-redux'
 
 // src/js/store/index.js
 import { createStore, applyMiddleware, compose } from "redux";
-import createRootReducer from "./reducers/index";
+import createRootReducer from "./reducers";
 import { forbiddenWordsMiddleware } from "./middleware";
 import createSagaMiddleware from "redux-saga";
 import apiSaga from "./sagas/api-sage";
