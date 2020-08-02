@@ -99,9 +99,7 @@ REST_FRAMEWORK = {
 
 # CORS setting
 CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-]
+CORS_ORIGIN_WHITELIST = os.environ.get("CORS_ORIGIN_WHITELIST").split(" ")
 
 
 # Database
