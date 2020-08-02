@@ -32,3 +32,7 @@ export const refreshAccessToken = (token) => ({
   }
 })
 
+export const logout = () => {
+  return { type: LOGOUT }
+};
+
