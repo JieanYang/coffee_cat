@@ -27,7 +27,7 @@ module.exports = merge(base, {
      //使用插件定义全局变量DEV
         new webpack.DefinePlugin({
             'APP_NODE_ENV': JSON.stringify('production'),
-            'APP_BACK_ENDPOINT': JSON.stringify('https://api.young-stellar-base.com')
+            'APP_BACK_ENDPOINT': JSON.stringify('https://api.young-stellar-base.com/')
         })
     ]
 });
