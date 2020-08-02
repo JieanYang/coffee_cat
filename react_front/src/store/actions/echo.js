@@ -7,7 +7,7 @@ export const ECHO_FAILURE = '@@echo/ECHO_FAILURE';
 
 export const echo = (message) => ({
   [RSAA]: {
-      endpoint: 'http://localhost:8000/User/echo/',
+      endpoint: 'https://api.young-stellar-base.com/User/echo/',
       method: 'POST',
       body: JSON.stringify({message: message}),
       headers: withAuth({ 'Content-Type': 'application/json' }),

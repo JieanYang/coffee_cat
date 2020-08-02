@@ -9,7 +9,7 @@ export const TOKEN_FAILURE = '@@auth/TOKEN_FAILURE';
 
 export const login = (username, password) => ({
   [RSAA]: {
-    endpoint: 'http://localhost:8000/User/auth/token/obtain/',
+    endpoint: 'https://api.young-stellar-base.com/User/auth/token/obtain/',
     method: 'POST',
     body: JSON.stringify({username, password}),
     headers: { 'Content-Type': 'application/json' },
@@ -21,7 +21,7 @@ export const login = (username, password) => ({
 
 export const refreshAccessToken = (token) => ({
   [RSAA]: {
-    endpoint: 'http://localhost:8000/User/auth/token/refresh/',
+    endpoint: 'https://api.young-stellar-base.com/User/auth/token/obtain/',
     method: 'POST',
     body: JSON.stringify({refresh: token}),
     headers: { 'Content-Type': 'application/json' },
