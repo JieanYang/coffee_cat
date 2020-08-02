@@ -31,11 +31,11 @@ urlpatterns = [
 	path('noauth/', views.noauth, name='noauth'),
 
 	# path(r'$', generic.RedirectView.as_view(url='/api/', permanent=False)),
-    path(r'api/', get_schema_view()),
-    path(r'api/auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path(r'api/auth/token/obtain/', TokenObtainPairView.as_view()),
-    path(r'api/auth/token/refresh/', TokenRefreshView.as_view()),
-    path(r'api/echo/', EchoView.as_view())
+    # path(r'api/', get_schema_view()),
+    # path(r'auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path(r'auth/token/obtain/', TokenObtainPairView.as_view()),
+    path(r'auth/token/refresh/', TokenRefreshView.as_view()),
+    path(r'echo/', EchoView.as_view())
 ]
 
 

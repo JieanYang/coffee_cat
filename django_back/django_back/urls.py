@@ -18,8 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from modules.upload.views import image_upload
-from modules.User.urls import urlpatterns as User_urls
+from apps.upload.views import image_upload
+from apps.User.urls import urlpatterns as User_urls
 
 urlpatterns = [
     path('User/', include(User_urls)),
