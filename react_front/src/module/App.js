@@ -9,8 +9,8 @@ import {
 } from "react-router-dom";
 
 
+import PrivateRoute from "./4_base/PrivateRoute";
 import Header from "./2_component/Header";
-import PrivateRoute from "./2_component/PrivateRoute";
 import Article from "./1_page/Article";
 import Login from "./1_page/Login";
 import Home from "./1_page/Home";
