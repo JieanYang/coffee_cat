@@ -69,7 +69,10 @@ Commands AWS:
 ssh -i [/path/my-key-pair.pem] [my-instance-user-name@my-instance-public-dns-name]
 scp -i [/path/my-key-pair.pem] [/path/SampleFile.txt my-instance-user-name@my-instance-public-dns-name:~]
 
-scp -r $(pwd)/{django_back,nginx,.env.staging,.env.staging.db,.env.staging.proxy-companion,docker-compose.staging.yml} [user@your-ip-or-domain:/path/to/django-on-docker]
+# staging
+scp -r $(pwd)/{django_back,nginx,.env.staging,.env.staging.db,.env.staging.proxy-companion,docker-compose.staging.yml,react_front,.env.staging.react} [user@your-ip-or-domain:/path/to/django-on-docker]
+# prod
+
 ```
 Login AWS-CLI:
 ```
