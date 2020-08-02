@@ -12,10 +12,8 @@ export const articlesReducer = (state=[], action) => {
 export const remoteArticlesReducer = (state=[], action) => {
   switch(action.type) {
     case DATA_LOADED:
-      return Object.assign({}, state, {
-        remoteArticles: state.remoteArticles.concat(action.payload)
-      });
+      return state.concat(action.payload)
     default:
-      return state;
+      return state
   }
 }
