@@ -1,4 +1,4 @@
-import * as echo from '../actions/echo'
+import { ECHO_SUCCESS } from '../actions'
 
 const initialState = {
   message: ""
@@ -6,7 +6,7 @@ const initialState = {
 
 export const echoReducer = (state=initialState, action) => {
   switch(action.type) {
-    case echo.ECHO_SUCCESS:
+    case ECHO_SUCCESS:
       return {
         message: action.payload.message
       }

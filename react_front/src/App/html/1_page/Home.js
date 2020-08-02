@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { echo } from '../../../store/actions/echo'
+import { echo } from '../../../store/actions'
 
 
 class App extends Component {
