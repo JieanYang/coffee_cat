@@ -7,7 +7,7 @@ const initialState = {
   errors: {},
 }
 
-export default (state=initialState, action) => {
+export const authReducer = (state=initialState, action) => {
   switch(action.type) {
     case auth.LOGIN_SUCCESS:
       return {
@@ -43,33 +43,44 @@ export default (state=initialState, action) => {
     }
 }
 
-export function accessToken(state) {
-    if (state.access) {
-        return  state.access.token
+const accessToken = (state) => {
+    if (state.auth.access) {
+        return  state.auth.access.token
     }
 }
-    
-export function refreshToken(state) {
-    if (state.refresh) {
-        return  state.refresh.token
-    }
-}
-    
-export function isAccessTokenExpired(state) {
-  if (state.access && state.access.exp) {
-    return 1000 * state.access.exp - (new Date()).getTime() < 5000
+
+const isRefreshTokenExpired = (auth) => {
+  if (auth.refresh && auth.refresh.exp) {
+    return 1000 * auth.refresh.exp - (new Date()).getTime() < 5000
   }
   return true
 }
-export function isRefreshTokenExpired(state) {
-  if (state.refresh && state.refresh.exp) {
-    return 1000 * state.refresh.exp - (new Date()).getTime() < 5000
+    
+export const refreshToken = (state) => {
+    if (state.auth.refresh) {
+        return  state.auth.refresh.token
+    }
+}
+    
+export const isAccessTokenExpired = (state) => {
+  if (state.auth.access && state.auth.access.exp) {
+    return 1000 * state.auth.access.exp - (new Date()).getTime() < 5000
   }
   return true
 }
-export function isAuthenticated(state) {
-  return !isRefreshTokenExpired(state)
+
+export const isAuthenticated = (state) => {
+  return !isRefreshTokenExpired(state.auth)
 }
-export function errors(state) {
-   return  state.errors
+
+export const authErrors = (state) => {
+   return  state.auth.errors
+}
+
+
+export const withAuth = (headers={}) => {
+  return (state) => ({
+    ...headers,
+    'Authorization': `Bearer ${accessToken(state)}`
+  })
 }
