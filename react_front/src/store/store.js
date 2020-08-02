@@ -8,7 +8,7 @@ import { routerMiddleware } from 'react-router-redux'
 
 // src/js/store/index.js
 import { createStore, applyMiddleware, compose } from "redux";
-import createRootReducer from "./reducers/index";
+import createRootReducer from "./reducers";
 import { forbiddenWordsMiddleware } from "./middleware";
 import createSagaMiddleware from "redux-saga";
 import apiSaga from "./sagas/api-sage";
