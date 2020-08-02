@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     
-    'modules.upload',
-    'modules.User'
+    'apps.upload',
+    'apps.User'
 ]
 
 MIDDLEWARE = [
