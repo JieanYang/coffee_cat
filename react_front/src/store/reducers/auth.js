@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode'
-import * as auth from '../actions'
+import { LOGIN_SUCCESS, TOKEN_RECEIVED, LOGIN_FAILURE, TOKEN_FAILURE, LOGOUT } from '../actions'
 
 const initialState = {
   access: undefined,
@@ -9,7 +9,7 @@ const initialState = {
 
 export const authReducer = (state=initialState, action) => {
   switch(action.type) {
-    case auth.LOGIN_SUCCESS:
+    case LOGIN_SUCCESS:
       return {
         access: {
           token: action.payload.access,
@@ -21,7 +21,7 @@ export const authReducer = (state=initialState, action) => {
         },
         errors: {}
       }
-    case auth.TOKEN_RECEIVED:
+    case TOKEN_RECEIVED:
       return {
         ...state,
         access: {
@@ -29,8 +29,8 @@ export const authReducer = (state=initialState, action) => {
           ...jwtDecode(action.payload.access)
         }
       }
-    case auth.LOGIN_FAILURE:
-    case auth.TOKEN_FAILURE:
+    case LOGIN_FAILURE:
+    case TOKEN_FAILURE:
       return {
          access: undefined,
          refresh: undefined,
@@ -38,6 +38,8 @@ export const authReducer = (state=initialState, action) => {
              action.payload.response || 
                 {'non_field_errors': action.payload.statusText},
       }
+    case LOGOUT:
+      return initialState
     default:
       return state
     }

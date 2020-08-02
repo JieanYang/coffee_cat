@@ -20,7 +20,8 @@ module.exports = merge(base, {
        //定义全局变量
         new webpack.DefinePlugin({
          //这里必须要解析成字符串进行判断，不然将会被识别为一个变量
-            'APP_NODE_ENV': JSON.stringify('dev')
+			'APP_NODE_ENV': JSON.stringify('dev'),
+			'APP_BACK_ENDPOINT': JSON.stringify('http://localhost:8000/')
         })
     ]
 });

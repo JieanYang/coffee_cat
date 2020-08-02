@@ -1,15 +1,16 @@
-import { RSAA } from 'redux-api-middleware';
+import { RSAA } from 'redux-api-middleware'
 
-export const LOGIN_REQUEST = '@@auth/LOGIN_REQUEST';
-export const LOGIN_SUCCESS = '@@auth/LOGIN_SUCCESS';
-export const LOGIN_FAILURE = '@@auth/LOGIN_FAILURE';
-export const TOKEN_REQUEST = '@@auth/TOKEN_REQUEST';
-export const TOKEN_RECEIVED = '@@auth/TOKEN_RECEIVED';
-export const TOKEN_FAILURE = '@@auth/TOKEN_FAILURE';
+export const LOGIN_REQUEST = '@@auth/LOGIN_REQUEST'
+export const LOGIN_SUCCESS = '@@auth/LOGIN_SUCCESS'
+export const LOGIN_FAILURE = '@@auth/LOGIN_FAILURE'
+export const TOKEN_REQUEST = '@@auth/TOKEN_REQUEST'
+export const TOKEN_RECEIVED = '@@auth/TOKEN_RECEIVED'
+export const TOKEN_FAILURE = '@@auth/TOKEN_FAILURE'
+export const LOGOUT = "@@auth/LOGOUT"
 
 export const login = (username, password) => ({
   [RSAA]: {
-    endpoint: 'https://api.young-stellar-base.com/User/auth/token/obtain/',
+    endpoint: APP_BACK_ENDPOINT + 'User/auth/token/obtain/',
     method: 'POST',
     body: JSON.stringify({username, password}),
     headers: { 'Content-Type': 'application/json' },
@@ -21,7 +22,7 @@ export const login = (username, password) => ({
 
 export const refreshAccessToken = (token) => ({
   [RSAA]: {
-    endpoint: 'https://api.young-stellar-base.com/User/auth/token/obtain/',
+    endpoint: APP_BACK_ENDPOINT + 'User/auth/token/obtain/',
     method: 'POST',
     body: JSON.stringify({refresh: token}),
     headers: { 'Content-Type': 'application/json' },
@@ -30,3 +31,4 @@ export const refreshAccessToken = (token) => ({
     ]
   }
 })
+
