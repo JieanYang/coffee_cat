@@ -1,4 +1,3 @@
-// src/js/actions/index.js
 
 export * from './auth';
 

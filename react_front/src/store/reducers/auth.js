@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode'
-import * as auth from '../actions/auth'
+import * as auth from '../actions'
 
 const initialState = {
   access: undefined,
