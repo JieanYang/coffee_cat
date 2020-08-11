@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'apps.upload',
-    'apps.User'
+    'apps.User',
+    'apps.Note'
 ]
 
 MIDDLEWARE = [
