@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle, faStickyNote } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
 import { authErrors, isAuthenticated } from '../../../store/reducers';
@@ -40,6 +40,10 @@ const Header = (props) => {
 					  	<FontAwesomeIcon icon={faHome} color="green"/>
 					  	Home
 					</Link> 
+					<Link to="/note">
+						<FontAwesomeIcon icon={faStickyNote} color="green" />
+						Note
+					</Link>
 					<Link to="/about">
 						<FontAwesomeIcon icon={faInfoCircle} color="green" />
 						About
