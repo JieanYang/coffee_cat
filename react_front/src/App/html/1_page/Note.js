@@ -21,7 +21,9 @@ const Note = (props) => {
             <h1>Note page</h1>
             <ul>
                 {notes.map((el) => (
-                    <li key={el.pk}>{el.fields.title}</li>
+                    <li key={el.id}>
+                        {el.title}: {el.content}
+                    </li>
                 ))}
             </ul>
         </>
