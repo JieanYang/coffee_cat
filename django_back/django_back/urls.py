@@ -19,12 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from apps.upload.views import image_upload
-from apps.User.urls import urlpatterns as User_urls
-from apps.Note.urls import urlpatterns as Note_urls
 
 urlpatterns = [
-    path('Note/', include(Note_urls)),
-    path('User/', include(User_urls)),
+    path('Note/', include('apps.Note.urls')),
+    path('User/', include('apps.User.urls')),
     path('', image_upload, name='upload'),
     path('admin/', admin.site.urls),
 ]
