@@ -1,7 +1,5 @@
 from django.urls import path, include
 
-from django.views import generic
-from rest_framework.schemas import get_schema_view
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -32,10 +30,7 @@ urlpatterns = [
     path('logout/', views.logout, name='results'),
     path('test/', views.test, name='test'),
     path('noauth/', views.noauth, name='noauth'),
-
-    # path(r'$', generic.RedirectView.as_view(url='/api/', permanent=False)),
-    # path(r'api/', get_schema_view()),
-    # path(r'auth/', include('rest_framework.urls', namespace='rest_framework')),
+    
     path(r'auth/token/obtain/', TokenObtainPairView.as_view()),
     path(r'auth/token/refresh/', TokenRefreshView.as_view()),
     path(r'echo/', EchoView.as_view())

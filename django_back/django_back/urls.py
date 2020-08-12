@@ -18,6 +18,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+# from django.views import generic
+from rest_framework.schemas import get_schema_view
+
 from apps.upload.views import image_upload
 
 urlpatterns = [
@@ -25,6 +28,10 @@ urlpatterns = [
     path('User/', include('apps.User.urls')),
     path('', image_upload, name='upload'),
     path('admin/', admin.site.urls),
+
+    # path(r'$', generic.RedirectView.as_view(url='/api/', permanent=False)),
+    path(r'api/', get_schema_view()),
+    path(r'auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 # urlpatterns = [path(r'api/', include(urlpatterns))]
 
