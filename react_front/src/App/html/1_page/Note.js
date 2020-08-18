@@ -8,7 +8,7 @@ const Note = (props) => {
 
     
     useEffect(() => {
-        fetch('http://localhost:8000/Note/')
+        fetch(APP_BACK_ENDPOINT + '/Note/')
         .then(response => response.json())
         .then(data => {
             console.log(data)
