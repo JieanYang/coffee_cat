@@ -30,7 +30,7 @@ urlpatterns = [
     path('logout/', views.logout, name='results'),
     path('test/', views.test, name='test'),
     path('noauth/', views.noauth, name='noauth'),
-    
+
     path(r'auth/token/obtain/', TokenObtainPairView.as_view()),
     path(r'auth/token/refresh/', TokenRefreshView.as_view()),
     path(r'echo/', EchoView.as_view())

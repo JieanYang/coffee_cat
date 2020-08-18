@@ -86,6 +86,9 @@ aws ecr get-login-password --region eu-west-3 | docker login --username AWS --pa
 
 Django:
 ```
+Check syntax
+python3 -m flake8 --ignore=E501,F401 .
+
 Project
 python3 -m django startproject projectname
 python3 manage.py startapp appname
