@@ -12,6 +12,7 @@ import '../../style/2_component/Header.scss'
 
 const Header = (props) => {
 	// const [scrolling, setScrolling] = useState(false)
+	const [itemSelected, setItemSelected] = useState('Home')
 	const [scrollTop, setScrollTop] = useState(0)
 
 	useEffect(() => {
@@ -31,36 +32,45 @@ const Header = (props) => {
 		return () => window.removeEventListener("scroll", onScroll)
 	}, [scrollTop])
 
+	const handleClickMenuItem = (item) => () => {
+		props.isAuthenticated && setItemSelected(item)
+	}
+
+	const handleClassActive = (menu) => itemSelected == menu ? 'active' : ''
+
 	return (
 		<>
 			<nav id="navbar">
 				<a href="#default" id="logo">CompanyLogo</a>
 				<div id="navbar-right">
-					<Link className="active" to="/">
+					<Link to="/" className={handleClassActive('Home')} onClick={handleClickMenuItem('Home')}>
 					  	<FontAwesomeIcon icon={faHome}/>
 					  	Home
 					</Link> 
-					<Link to="/note">
+					<Link to="/note" className={handleClassActive('Note')} onClick={handleClickMenuItem('Note')}>
 						<FontAwesomeIcon icon={faStickyNote} />
 						Note
 					</Link>
-					<Link to="/about">
+					<Link to="/about" className={handleClassActive('About')} onClick={handleClickMenuItem('About')}>
 						<FontAwesomeIcon icon={faInfoCircle} />
 						About
 					</Link>
-					<Link to="/contact">
+					<Link to="/contact" className={handleClassActive('Contact')} onClick={handleClickMenuItem('Contact')}>
 						<FontAwesomeIcon icon={faEnvelope} />
 						Contact
 					</Link>
-					<Link to="/article">
+					<Link to="/article" className={handleClassActive('Article')} onClick={handleClickMenuItem('Article')}>
 						<FontAwesomeIcon icon={faAlignLeft} />
 						Article
 					</Link>
-					{!props.isAuthenticated &&  <Link to="/login">
+					{!props.isAuthenticated &&  <Link to="/login" className={handleClassActive('Login')} onClick={() => !props.isAuthenticated && setItemSelected('Login')}>
 						<FontAwesomeIcon icon={faUser} />
 						Login
 					</Link>}
-					{props.isAuthenticated && <Link to="/login" onClick={props.logout}>
+					{props.isAuthenticated && <Link to="/login" className={handleClassActive('Logout')} onClick={() => {
+						props.logout()
+						setItemSelected('Login')
+					}}>
 						<FontAwesomeIcon icon={faUser} />
 						Logout
 					</Link>}
