@@ -21,7 +21,7 @@ module.exports = merge(base, {
         new webpack.DefinePlugin({
          //这里必须要解析成字符串进行判断，不然将会被识别为一个变量
 			'APP_NODE_ENV': JSON.stringify('dev'),
-			'APP_BACK_ENDPOINT': JSON.stringify('http://localhost:8000/')
+			'APP_BACK_ENDPOINT': JSON.stringify('http://localhost:8000')
         })
     ]
 });
