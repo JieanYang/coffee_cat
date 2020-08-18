@@ -7,6 +7,7 @@ from rest_framework.parsers import JSONParser
 from .models import Note
 from .serializers import NoteSerializer
 
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -15,6 +16,7 @@ class JSONResponse(HttpResponse):
         content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
+
 
 def note_list(request):
     if request.method == 'GET':
@@ -29,12 +31,13 @@ def note_list(request):
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
 
+
 def note_detail(request, pk):
     try:
         note = Note.objects.get(pk=pk)
     except Note.DoesNotExist:
         return HttpResponse(status=404)
-    
+
     if request.method == 'GET':
         serializer = NoteSerializer(note)
         return JSONResponse(serializer.data)
