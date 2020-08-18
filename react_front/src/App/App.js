@@ -12,6 +12,7 @@ import './style/4_base/App.scss'
 
 import PrivateRoute from "./html/4_base/PrivateRoute"
 import Header from "./html/2_component/Header"
+import Footer from "./html/2_component/Footer"
 import Article from "./html/1_page/Article"
 import Login from "./html/1_page/Login"
 import Home from "./html/1_page/Home"
@@ -31,6 +32,7 @@ const App = () => (
           <PrivateRoute path="/" component={Home} />
         </Switch>
       </div>
+      <Footer />
     </Router>
   </>
 )
