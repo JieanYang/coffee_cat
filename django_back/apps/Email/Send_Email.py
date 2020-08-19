@@ -1,8 +1,6 @@
 import smtplib
 
 def send_email(user, pwd, recipient, subject, body):
-    import smtplib
-
     FROM = user
     TO = recipient if isinstance(recipient, list) else [recipient]
     SUBJECT = subject
@@ -27,7 +25,7 @@ def send_email(user, pwd, recipient, subject, body):
 if __name__ == "__main__":
     gmail_user = 'rdv.reminder666@gmail.com'
     gmail_password = 'Pascalc4!'
-    recipient = ['pascalliangc4@gmail.com','pierre.lee88@gmail.com']
+    recipient = ['dev.sb.yja@gmail.com']
     subject = 'RDV Nanterre Prefecture Disponible'
     url = 'http://www.hauts-de-seine.gouv.fr/booking/create/14086/0'
     body = 'Aller sur le site ' + url 
