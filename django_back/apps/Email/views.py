@@ -1,8 +1,8 @@
-from django.shortcuts import render
-import Send_Email
+from django.http import HttpResponse
+from . import Send_Email
 
 
-def send_email():
+def send_email(request):
     gmail_user = 'rdv.reminder666@gmail.com'
     gmail_password = 'Pascalc4!'
     recipient = ['dev.sb.yja@gmail.com']
@@ -12,6 +12,7 @@ def send_email():
 
     try:
         Send_Email.send_email(gmail_user,gmail_password, recipient,subject,body)
+        return HttpResponse('successfully sent the mail', status=200)
     except:
         print('An exception occurred')
 

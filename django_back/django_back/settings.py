@@ -51,7 +51,8 @@ INSTALLED_APPS = [
 
     'apps.upload',
     'apps.User',
-    'apps.Note'
+    'apps.Note',
+    'apps.Email'
 ]
 
 MIDDLEWARE = [
