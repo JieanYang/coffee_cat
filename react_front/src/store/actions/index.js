@@ -1,6 +1,7 @@
 
 export * from './auth'
 export * from './echo'
+export * from './email'
 
 import { ADD_ARTICLE, DATA_LOADED } from "../constants/action-types"
 

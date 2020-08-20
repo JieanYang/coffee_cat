@@ -1,11 +1,12 @@
 
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addArticle } from "../../../store/actions";
+import { addArticle, sendEmail } from "../../../store/actions";
 
 function mapDispatchToProps(dispatch) {
   return {
-    addArticle: article => dispatch(addArticle(article))
+    addArticle: article => dispatch(addArticle(article)),
+    sendEmail: () => dispatch(sendEmail())
   };
 }
 
@@ -22,7 +23,9 @@ const Form = (props) => {
     if(props.show_input.includes('title')) {
       props.addArticle({ title })
       setTitle("")
-    }
+    } else if(props.show_input.includes('Email_recipient')) {
+      props.sendEmail()
+    } else console.log('bad input for handleSubmit in Form file')
   }
 
   return (

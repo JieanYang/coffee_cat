@@ -1,4 +1,5 @@
 import React from "react"
+import { connect } from "react-redux";
 import Form from "../3_unit/Form"
 
 const Contact = () => {
@@ -10,4 +11,9 @@ const Contact = () => {
     )
 }
 
-export default Contact
+const connectContact = connect(
+    null, 
+    null
+)(Contact)
+
+export default connectContact
