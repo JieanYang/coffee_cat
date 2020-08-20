@@ -6,7 +6,7 @@ import { addArticle, sendEmail } from "../../../store/actions";
 function mapDispatchToProps(dispatch) {
   return {
     addArticle: article => dispatch(addArticle(article)),
-    sendEmail: () => dispatch(sendEmail())
+    sendEmail: (data) => dispatch(sendEmail(data))
   };
 }
 
@@ -24,7 +24,7 @@ const Form = (props) => {
       props.addArticle({ title })
       setTitle("")
     } else if(props.show_input.includes('Email_recipient')) {
-      props.sendEmail()
+      props.sendEmail({recipient, subject, body})
     } else console.log('bad input for handleSubmit in Form file')
   }
 
