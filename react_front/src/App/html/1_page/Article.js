@@ -1,11 +1,11 @@
 
-import React from "react";
+import React from "react"
 
-import List from "../3_unit/List";
-import Form from "../3_unit/Form";
-import Post from "../3_unit/Posts";
+import List from "../3_unit/List"
+import Form from "../3_unit/Form"
+import Post from "../3_unit/Posts"
 
-export default function Article() {
+const Article = () => {
 	return (
 		<>
 			<div>
@@ -15,7 +15,7 @@ export default function Article() {
 			    </div>
 			    <div>
 			      <h2>Add a new article</h2>
-			      <Form />
+			      <Form show_input={['title']} />
 			    </div>
 			    <div>
 			      <h2>API posts</h2>
@@ -32,4 +32,6 @@ export default function Article() {
 		</>
 	)
 }
+
+export default Article
 

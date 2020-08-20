@@ -14,6 +14,7 @@ import PrivateRoute from "./html/4_base/PrivateRoute"
 import Header from "./html/2_component/Header"
 import Footer from "./html/2_component/Footer"
 import Article from "./html/1_page/Article"
+import Contact from "./html/1_page/Contact"
 import Login from "./html/1_page/Login"
 import Home from "./html/1_page/Home"
 import Note from "./html/1_page/Note"
@@ -26,7 +27,7 @@ const App = () => (
         <Switch>
           <Route exact path="/login/" component={Login} />
           <PrivateRoute path="/about/" component={() => <h2>About</h2>} />
-          <PrivateRoute path="/contact/" component={() => <h2>contact</h2>} />
+          <PrivateRoute path="/contact/" component={Contact} />
           <PrivateRoute path="/article/" component={Article} />
           <PrivateRoute path="/note" component={Note} />
           <PrivateRoute path="/" component={Home} />

@@ -10,6 +10,7 @@ import { routerMiddleware } from 'react-router-redux'
 import { createStore, applyMiddleware, compose } from "redux";
 import createRootReducer from "./reducers";
 import { forbiddenWordsMiddleware } from "./middleware";
+import thunk from "redux-thunk"
 import createSagaMiddleware from "redux-saga";
 import apiSaga from "./sagas/api-sage";
 import { createLogger } from 'redux-logger';
@@ -41,7 +42,8 @@ export default function configureStore(preloadedState={}) {
 	    	routerMiddleware(history),
 	    	apiMiddleware,
 	    	forbiddenWordsMiddleware, 
-	    	initialiseSagaMiddleware,
+			initialiseSagaMiddleware,
+			thunk,
 	    	createLogger(), 
 	    )
 	  )
