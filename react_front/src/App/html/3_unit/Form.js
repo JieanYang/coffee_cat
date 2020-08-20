@@ -20,15 +20,16 @@ const Form = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">Title</label>
-        <input
-          type="text"
-          id="title"
-          value={title}
-          onChange={event => setTitle(event.target.value)}
-        />
-      </div>
+      {props.show_input.includes('title') &&  
+        <div>
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            value={title}
+            onChange={event => setTitle(event.target.value)}
+          />
+        </div>}
       <button type="submit">SAVE</button>
     </form>
   )
