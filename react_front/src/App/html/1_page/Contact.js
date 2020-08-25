@@ -6,7 +6,7 @@ const Contact = () => {
     return (
         <div>
             <h2>Contact</h2>
-            <Form show_input={['Email_recipient', 'Email_subject', 'Email_body']} />
+            <Form type="Contact" show_input={['Email_recipient', 'Email_subject', 'body']} />
         </div>
     )
 }

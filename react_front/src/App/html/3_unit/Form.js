@@ -17,15 +17,20 @@ const Form = (props) => {
   const [recipient, setRecipient] = useState("")
   const [subject, setSubject] = useState("")
   const [body, setBody] = useState("")
+  // Note
+  // [title, body]
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if(props.show_input.includes('title')) {
+    if(props.type=='Article') {
       props.addArticle({ title })
       setTitle("")
-    } else if(props.show_input.includes('Email_recipient')) {
+    } else if(props.type=='Contact') {
       props.sendEmail({recipient, subject, body})
-    } else console.log('bad input for handleSubmit in Form file')
+    } else if(props.type=='Note') {
+      console.log("type note")
+    }
+    else console.error('bad input for handleSubmit in Form file')
   }
 
   return (
@@ -33,6 +38,7 @@ const Form = (props) => {
       {props.show_input.includes('title') &&  
         <div>
           <label htmlFor="title">Title</label>
+          &nbsp;&nbsp;
           <input
             type="text"
             id="title"
@@ -70,7 +76,7 @@ const Form = (props) => {
           </div>
         </>
       }
-      {props.show_input.includes('Email_body') &&  
+      {props.show_input.includes('body') &&  
         <>
           <br />
           <div>
