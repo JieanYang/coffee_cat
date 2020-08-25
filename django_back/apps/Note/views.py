@@ -9,6 +9,7 @@ from .serializers import NoteSerializer
 
 from django.views.decorators.csrf import csrf_exempt
 
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -17,6 +18,7 @@ class JSONResponse(HttpResponse):
         content = JSONRenderer().render(data)
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
+
 
 @csrf_exempt
 def note_list(request):
@@ -31,6 +33,7 @@ def note_list(request):
             serializer.save()
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
+
 
 @csrf_exempt
 def note_detail(request, pk):
