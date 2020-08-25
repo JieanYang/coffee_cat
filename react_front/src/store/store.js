@@ -3,7 +3,7 @@
 import storage from 'redux-persist/es/storage'
 import { apiMiddleware } from './middleware';
 import { createFilter   } from 'redux-persist-transform-filter';
-import { persistReducer, persistStore } from 'redux-persist'
+import { persistReducer } from 'redux-persist'
 import { routerMiddleware } from 'react-router-redux'
 
 // src/js/store/index.js
@@ -24,9 +24,9 @@ export default function configureStore(preloadedState={}) {
 	const persistedFilter = createFilter('auth', ['access', 'refresh']);
 	const reducer = persistReducer(
 	    {
-	      key: 'polls',
+	      key: 'root',
 	      storage: storage,
-	      whitelist: ['auth'],
+	      whitelist: ['auth', 'persist_data'],
 	      transforms: [persistedFilter]
 	    },
 	    createRootReducer(history))
@@ -48,8 +48,6 @@ export default function configureStore(preloadedState={}) {
 	    )
 	  )
 	)
-
-	persistStore(store)
 	
 	initialiseSagaMiddleware.run(apiSaga)
 
