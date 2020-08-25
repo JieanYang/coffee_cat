@@ -6,13 +6,13 @@ import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle, faStickyNote } f
 import { Link } from "react-router-dom"
 
 import { authErrors, isAuthenticated } from '../../../store/reducers'
-import { logout } from '../../../store/actions'
+import { logout, setMenu } from '../../../store/actions'
 
 import '../../style/2_component/Header.scss'
 
 const Header = (props) => {
 	// const [scrolling, setScrolling] = useState(false)
-	const [itemSelected, setItemSelected] = useState('Home')
+	const [itemSelected, setItemSelected] = useState(props.menu)
 	const [scrollTop, setScrollTop] = useState(0)
 
 	useEffect(() => {
@@ -33,6 +33,7 @@ const Header = (props) => {
 	}, [scrollTop])
 
 	const handleClickMenuItem = (item) => () => {
+		props.isAuthenticated && props.set_menu(item)
 		props.isAuthenticated && setItemSelected(item)
 	}
 
@@ -99,13 +100,13 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => ({
 	errors: authErrors(state),
-	isAuthenticated: isAuthenticated(state)
+	isAuthenticated: isAuthenticated(state),
+	menu: state.persist_data.menu
 })
 
 const mapDispatchToProps = (dispatch) => ({
-	logout: () => {
-		dispatch(logout())
-	}
+	logout: () => {dispatch(logout())},
+	set_menu: (item) => {dispatch(setMenu(item))}
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

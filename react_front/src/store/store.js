@@ -26,7 +26,7 @@ export default function configureStore(preloadedState={}) {
 	    {
 	      key: 'root',
 	      storage: storage,
-	      whitelist: ['auth'],
+	      whitelist: ['auth', 'persist_data'],
 	      transforms: [persistedFilter]
 	    },
 	    createRootReducer(history))

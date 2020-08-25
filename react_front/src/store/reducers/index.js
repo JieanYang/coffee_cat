@@ -2,10 +2,11 @@
 export * from './auth'
 export * from './echo'
 export * from './email'
+export * from './persist_data'
 
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
-import { authReducer, echoReducer, emailReducer } from '../reducers'
+import { authReducer, echoReducer, emailReducer, PersistDataReducer } from '../reducers'
 import { articlesReducer, remoteArticlesReducer } from './article.js';
 
 const createRootReducer = (history) => combineReducers({
@@ -15,6 +16,7 @@ const createRootReducer = (history) => combineReducers({
   articles: articlesReducer, 
   remoteArticles: remoteArticlesReducer,
   email: emailReducer,
+  persist_data: PersistDataReducer
 })
 
 export default createRootReducer
