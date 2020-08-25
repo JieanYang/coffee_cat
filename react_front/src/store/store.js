@@ -24,7 +24,7 @@ export default function configureStore(preloadedState={}) {
 	const persistedFilter = createFilter('auth', ['access', 'refresh']);
 	const reducer = persistReducer(
 	    {
-	      key: 'polls',
+	      key: 'root',
 	      storage: storage,
 	      whitelist: ['auth'],
 	      transforms: [persistedFilter]
