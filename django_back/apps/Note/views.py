@@ -32,7 +32,7 @@ def note_list(request):
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
 
-
+@csrf_exempt
 def note_detail(request, pk):
     try:
         note = Note.objects.get(pk=pk)
