@@ -15,7 +15,7 @@ const Article = () => {
 			    </div>
 			    <div>
 			      <h2>Add a new article</h2>
-			      <Form show_input={['title']} />
+			      <Form type="Article" show_input={['title']} />
 			    </div>
 			    <div>
 			      <h2>API posts</h2>

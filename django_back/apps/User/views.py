@@ -1,30 +1,20 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login as dj_login, logout as dj_logout
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from .serializers import UserSerializer, GroupSerializer, MessageSerializer
 
+from rest_framework import views as rest_views, serializers, status
+from rest_framework.response import Response
 
-def login(request):
-    username = request.POST['username']
-    password = request.POST['password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        dj_login(request, user)
-        return HttpResponse("login")
-    else:
-        return HttpResponse("Response 403")
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
 
+class GroupViewSet(viewsets.ModelViewSet):
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
 
-@login_required
-def logout(request):
-    dj_logout(request)
-    return HttpResponse("logout")
-
-
-@login_required(login_url='/User/noauth')
-def test(request):
-    return HttpResponse("Hello, world !")
-
-
-def noauth(request):
-    return HttpResponse("HTTP 403 code")
+class EchoView(rest_views.APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = MessageSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

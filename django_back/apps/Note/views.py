@@ -7,6 +7,7 @@ from rest_framework.parsers import JSONParser
 from .models import Note
 from .serializers import NoteSerializer
 
+from django.views.decorators.csrf import csrf_exempt
 
 class JSONResponse(HttpResponse):
     """
@@ -17,7 +18,7 @@ class JSONResponse(HttpResponse):
         kwargs['content_type'] = 'application/json'
         super(JSONResponse, self).__init__(content, **kwargs)
 
-
+@csrf_exempt
 def note_list(request):
     if request.method == 'GET':
         notes = Note.objects.all()
@@ -31,7 +32,7 @@ def note_list(request):
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
 
-
+@csrf_exempt
 def note_detail(request, pk):
     try:
         note = Note.objects.get(pk=pk)
