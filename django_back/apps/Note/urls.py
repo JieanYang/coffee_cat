@@ -6,3 +6,5 @@ urlpatterns = [
     path('', views.NoteList.as_view(), name='allNotes'),
     path('<int:pk>/', views.NoteDetail.as_view(), name='oneNote'),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
