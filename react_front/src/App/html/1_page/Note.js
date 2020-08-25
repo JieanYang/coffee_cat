@@ -24,14 +24,22 @@ const Note = (props) => {
                 <ul>
                     {notes.map((el) => (
                         <li key={el.id}>
-                            {el.title}: {el.content}
+                            {el.title}: {el.content} [{el.id}]
                         </li>
                     ))}
                 </ul>
             </div>
             <div>
-                <h1>Create Note</h1>
-                <Form type="Note" show_input={['title', 'body']} />
+                <h2>Create Note</h2>
+                <Form type="Note" action="POST" show_input={['title', 'body']} />
+            </div>
+            <div>
+                <h2>Update Note</h2>
+                <Form type="Note" action="PUT" show_input={['id', 'title', 'body']} />
+            </div>
+            <div>
+                <h2>Delete Note</h2>
+                <Form type="Note" action="DELETE" show_input={['id']} />
             </div>
         </>
     )

@@ -11,44 +11,73 @@ function mapDispatchToProps(dispatch) {
 }
 
 const Form = (props) => {
-  // Article
+  // Article [title]
+  // Email [recipient, subject, body]
+  // Note [id, title, body]
   const [title, setTitle] = useState("")
-  // Email
   const [recipient, setRecipient] = useState("")
   const [subject, setSubject] = useState("")
   const [body, setBody] = useState("")
-  // Note
-  // [title, body]
+  const [id, setId] = useState(undefined)
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if(props.type=='Article') {
+    if (props.type=='Article') {
       props.addArticle({ title })
       setTitle("")
-    } else if(props.type=='Contact') {
+    } else if (props.type=='Contact') {
       props.sendEmail({recipient, subject, body})
-    } else if(props.type=='Note') {
+    } else if (props.type=='Note') {
       console.log("type note")
+      if (props.action=="POST") {
+        console.log("create note")
+      } else if (props.action=="PUT") {
+        console.log("update note")
+      } else if (props.action=="DELETE") {
+        console.log("delete note")
+      }
     }
     else console.error('bad input for handleSubmit in Form file')
   }
 
+  const includes_array = (data, array) => {
+    array.forEach(item => {
+      data.includes(item);
+    });
+  }
+
   return (
     <form onSubmit={handleSubmit}>
+      {props.show_input.includes('id') && 
+        <>
+          <div>
+            <label htmlFor="id">id</label>
+            &nbsp;&nbsp;
+            <input
+              type="text"
+              id="id"
+              value={id}
+              onChange={event => setId(event.target.value)}
+            />
+          </div>
+        </>}
       {props.show_input.includes('title') &&  
-        <div>
-          <label htmlFor="title">Title</label>
-          &nbsp;&nbsp;
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={event => setTitle(event.target.value)}
-          />
-        </div>}
+        <>
+          {props.show_input.includes('id') && <br />}
+          <div>
+            <label htmlFor="title">Title</label>
+            &nbsp;&nbsp;
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={event => setTitle(event.target.value)}
+            />
+          </div>
+        </>}
       {props.show_input.includes('Email_recipient') && 
         <>
-          <br />
+          {includes_array(props.show_input, ['id', 'title']) && <br />}
           <div>
             <label htmlFor="recipient">Recipient</label>
             &nbsp;&nbsp;
