@@ -7,8 +7,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('id', 'url', 'username', 'email', 'groups')
         extra_kwargs = {
-            'url': {'view_name': 'User:user-detail'}, 
-            'groups': {'view_name': 'User:group-detail'}, 
+            'url': {'view_name': 'User:user-detail'},
+            'groups': {'view_name': 'User:group-detail'},
         }
 
 
@@ -16,7 +16,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ('id', 'url', 'name')
-        extra_kwargs = {'url': {'view_name': 'User:group-detail'}}  
+        extra_kwargs = {'url': {'view_name': 'User:group-detail'}}
 
 
 class MessageSerializer(serializers.Serializer):

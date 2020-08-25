@@ -5,13 +5,16 @@ from .serializers import UserSerializer, GroupSerializer, MessageSerializer
 from rest_framework import views as rest_views, serializers, status
 from rest_framework.response import Response
 
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
+
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
 
 class EchoView(rest_views.APIView):
     def post(self, request, *args, **kwargs):
