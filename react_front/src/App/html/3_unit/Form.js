@@ -30,7 +30,10 @@ const Form = (props) => {
     } else if (props.type=='Note') {
       console.log("type note")
       if (props.action=="POST") {
-        console.log("create note")
+        fetch(APP_BACK_ENDPOINT + '/Note/', {
+          method: 'POST',
+          body: JSON.stringify({title, content: body})
+        })
       } else if (props.action=="PUT") {
         console.log("update note")
       } else if (props.action=="DELETE") {
