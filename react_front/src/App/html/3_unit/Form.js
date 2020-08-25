@@ -18,7 +18,7 @@ const Form = (props) => {
   const [recipient, setRecipient] = useState("")
   const [subject, setSubject] = useState("")
   const [body, setBody] = useState("")
-  const [id, setId] = useState(undefined)
+  const [id, setId] = useState("")
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -36,8 +36,15 @@ const Form = (props) => {
         })
       } else if (props.action=="PUT") {
         console.log("update note")
+        fetch(`${APP_BACK_ENDPOINT}/Note/${id}/`, {
+          method: 'PUT',
+          body: JSON.stringify({title, content: body})
+        })
       } else if (props.action=="DELETE") {
         console.log("delete note")
+        fetch(`${APP_BACK_ENDPOINT}/Note/${id}/`, {
+          method: 'DELETE'
+        })
       }
     }
     else console.error('bad input for handleSubmit in Form file')
