@@ -6,7 +6,7 @@ from rest_framework import views as rest_views, serializers, status
 from rest_framework.response import Response
 
 class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all().order_by('-date_jointed')
+    queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
 class GroupViewSet(viewsets.ModelViewSet):
