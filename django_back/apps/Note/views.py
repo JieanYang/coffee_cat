@@ -1,57 +1,30 @@
 
-from django.http import HttpResponse
-
 from .models import Note
 from .serializers import NoteSerializer
-
-from rest_framework.renderers import JSONRenderer
-from rest_framework import status
-from rest_framework.views import APIView
-from django.utils.decorators import method_decorator
+from rest_framework import mixins
+from rest_framework import generics
 
 
-class JSONResponse(HttpResponse):
-    def __init__(self, data, **kwargs):
-        content = JSONRenderer().render(data)
-        kwargs['content_type'] = 'application/json'
-        super(JSONResponse, self).__init__(content, **kwargs)
+class NoteList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
 
 
-class NoteList(APIView):
-    def get(self, request, format=None):
-        notes = Note.objects.all()
-        serializer = NoteSerializer(notes, many=True)
-        return JSONResponse(serializer.data)
+class NoteDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
 
-    def post(self, request, format=None):
-        serializer = NoteSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return JSONResponse(serializer.data, status=status.HTTP_201_CREATED)
-        return JSONResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
 
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
 
-class NoteDetail(APIView):
-    def get_object(self, pk):
-        try:
-            return Note.objects.get(pk=pk)
-        except Note.DoesNotExist:
-            return JSONResponse(status=status.HTTP_404_NOT_FOUND)
-
-    def get(self, request, pk, format=None):
-        note = self.get_object(pk)
-        serializer = NoteSerializer(note)
-        return JSONResponse(serializer.data)
-
-    def put(self, request, pk, format=None):
-        note = self.get_object(pk)
-        serializer = NoteSerializer(note, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return JSONResponse(serializer.data)
-        return JSONResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk, format=None):
-        note = self.get_object(pk)
-        note.delete()
-        return JSONResponse(status=status.HTTP_204_NO_CONTENT)
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
