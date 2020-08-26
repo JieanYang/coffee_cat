@@ -3,6 +3,7 @@ from .models import Note
 from .serializers import NoteSerializer
 from rest_framework import generics
 from rest_framework import permissions
+from .permissions import IsOwnerOrReadOnly
 
 
 class NoteList(generics.ListCreateAPIView):
@@ -15,7 +16,7 @@ class NoteList(generics.ListCreateAPIView):
 
 
 class NoteDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly,)
 
     queryset = Note.objects.all()
     serializer_class = NoteSerializer
