@@ -30,9 +30,11 @@ urlpatterns = [
     path('', image_upload, name='upload'),
     path('admin/', admin.site.urls),
 
+    path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
     # path(r'$', generic.RedirectView.as_view(url='/api/', permanent=False)),
-    path(r'api/', get_schema_view()),
-    path(r'auth/', include('rest_framework.urls', namespace='rest_framework')),
+    # path(r'api/', get_schema_view()),
+    # path(r'auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 # urlpatterns = [path(r'api/', include(urlpatterns))]
 
