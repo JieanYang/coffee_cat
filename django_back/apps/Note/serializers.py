@@ -3,9 +3,11 @@ from .models import Note
 
 
 class NoteSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
     class Meta:
         model = Note
-        fields = ('id', 'title', 'content')
+        fields = ('id', 'title', 'content', 'owner')
 
     def create(self, validated_data):
         return Note.objects.create(**validated_data)
