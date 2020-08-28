@@ -25,6 +25,7 @@ from apps.upload.views import image_upload
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.authtoken import views as token_views
 
 class DocsView(APIView):
     def get(self, request, *args, **kwargs):
@@ -35,6 +36,7 @@ class DocsView(APIView):
                    'email': request.build_absolute_uri('Email/send_email'),
                    }
         return Response(apidocs)
+        
 
 
 urlpatterns = [
@@ -45,7 +47,8 @@ urlpatterns = [
     path('Note/', include('apps.Note.urls')),
 
     path('admin/', admin.site.urls),
-    path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api-token-auth/', token_views.obtain_auth_token)
 
     # path(r'$', generic.RedirectView.as_view(url='/api/', permanent=False)),
     # path(r'api/', get_schema_view()),
