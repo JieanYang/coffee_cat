@@ -6,7 +6,7 @@ import { Redirect } from 'react-router'
 import LoginForm from '../2_component/LoginForm';
 import { login } from '../../../store/actions';
 
-import {authErrors, isAuthenticated} from '../../../store/reducers';
+import {authErrors} from '../../../store/reducers';
 
 const my_login = () => {
 	const [userState, setUserState] = useState("no connect");
@@ -19,34 +19,6 @@ const my_login = () => {
 		return setUserState("logout");
 	}
 }
-
-
-
-// return (
-// 	<>
-// 		<div>
-// 			<div>
-// 		      <h2>Login</h2>
-// 		    </div>
-// 			<div>
-// 				state: {userState}
-// 			</div>
-// 		    <div>
-// 		    	<button onClick={action_login}>login</button>
-// 		    	&nbsp;
-// 		    	<button>noauth</button>
-// 		    	&nbsp;
-// 		    	<button>test</button>
-// 		    	&nbsp;
-// 		    	<button onClick={action_logout}>logout</button>
-// 		    </div>
-// 		    <div>
-// 		    	<LoginForm />
-// 		    </div>
-// 		</div>
-// 	</>
-// )
-
 
 
 const Login = (props) => {
@@ -65,7 +37,7 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => ({
 	errors: authErrors(state),
-	isAuthenticated: isAuthenticated(state)
+	isAuthenticated: true
 })
 
 const mapDispatchToProps = (dispatch) => ({

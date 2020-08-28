@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle, faStickyNote } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
 
-import { authErrors, isAuthenticated } from '../../../store/reducers'
+import { authErrors } from '../../../store/reducers'
 import { logout, setMenu } from '../../../store/actions'
 
 import '../../style/2_component/Header.scss'
@@ -100,7 +100,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => ({
 	errors: authErrors(state),
-	isAuthenticated: isAuthenticated(state),
+	isAuthenticated: true,
 	menu: state.persist_data.menu
 })
 

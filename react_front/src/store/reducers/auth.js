@@ -71,10 +71,6 @@ export const isAccessTokenExpired = (state) => {
   return true
 }
 
-export const isAuthenticated = (state) => {
-  return !isRefreshTokenExpired(state.auth)
-}
-
 export const authErrors = (state) => {
    return  state.auth.errors
 }
