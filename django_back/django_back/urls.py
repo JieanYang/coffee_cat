@@ -26,8 +26,8 @@ from apps.upload.views import image_upload
 urlpatterns = [
     path('Email/', include('apps.Email.urls')),
     path('Note/', include('apps.Note.urls')),
-    path('UserGroup/', include('apps.UserGroup.urls')),
-    path('', image_upload, name='upload'),
+    path('', include('apps.UserGroup.urls')),
+    path('upload', image_upload, name='upload'),
     path('admin/', admin.site.urls),
 
     path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
