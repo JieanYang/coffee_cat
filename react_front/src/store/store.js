@@ -20,7 +20,7 @@ const history = createHistory()
 
 export default function configureStore(preloadedState={}) {
 	// auth
-	const persistedFilter = createFilter('auth', ['access', 'refresh']);
+	const persistedFilter = createFilter('auth', ['token']);
 	const reducer = persistReducer(
 	    {
 	      key: 'root',
