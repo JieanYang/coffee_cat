@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'apps.upload',
-    'apps.User',
+    'apps.UserGroup',
     'apps.Note',
     'apps.Email'
 ]

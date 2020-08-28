@@ -26,7 +26,7 @@ from apps.upload.views import image_upload
 urlpatterns = [
     path('Email/', include('apps.Email.urls')),
     path('Note/', include('apps.Note.urls')),
-    path('User/', include('apps.User.urls')),
+    path('UserGroup/', include('apps.UserGroup.urls')),
     path('', image_upload, name='upload'),
     path('admin/', admin.site.urls),
 

@@ -22,5 +22,5 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {'url': {'view_name': 'User:group-detail'}}
 
 
-class MessageSerializer(serializers.Serializer):
-    message = serializers.CharField()
+# class MessageSerializer(serializers.Serializer):
+#     message = serializers.CharField()
