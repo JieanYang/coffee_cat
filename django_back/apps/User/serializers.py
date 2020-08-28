@@ -3,15 +3,15 @@ from apps.Note.models import Note
 from rest_framework import serializers
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     notes = serializers.PrimaryKeyRelatedField(many=True, queryset=Note.objects.all())
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'groups', 'notes')
+        fields = ('id', 'url', 'username', 'email', 'groups', 'notes')
         extra_kwargs = {
-            # 'url': {'view_name': 'User:user-detail'},
-            # 'groups': {'view_name': 'User:group-detail'},
+            'url': {'view_name': 'User:user-detail'},
+            'groups': {'view_name': 'User:group-detail'},
         }
 
 

@@ -8,15 +8,10 @@ from rest_framework import views as rest_views, serializers, status
 from rest_framework.response import Response
 
 
-class UserList(generics.ListAPIView):
+class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    # .order_by('-date_joined')
 
-
-class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
