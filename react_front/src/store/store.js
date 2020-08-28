@@ -1,7 +1,6 @@
 
 // auth
 import storage from 'redux-persist/es/storage'
-import { apiMiddleware } from './middleware';
 import { createFilter   } from 'redux-persist-transform-filter';
 import { persistReducer } from 'redux-persist'
 import { routerMiddleware } from 'react-router-redux'
@@ -21,7 +20,7 @@ const history = createHistory()
 
 export default function configureStore(preloadedState={}) {
 	// auth
-	const persistedFilter = createFilter('auth', ['access', 'refresh']);
+	const persistedFilter = createFilter('auth', ['token']);
 	const reducer = persistReducer(
 	    {
 	      key: 'root',
@@ -40,7 +39,6 @@ export default function configureStore(preloadedState={}) {
 	  storeEnhancers(
 	    applyMiddleware(
 	    	routerMiddleware(history),
-	    	apiMiddleware,
 	    	forbiddenWordsMiddleware, 
 			initialiseSagaMiddleware,
 			thunk,
