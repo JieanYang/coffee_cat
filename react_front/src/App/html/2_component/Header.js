@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle, faStickyNote } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
 
-import { authErrors } from '../../../store/reducers'
-import { logout, setMenu, isAuthenticated } from '../../../store/actions'
+import { authErrors, isAuthenticated } from '../../../store/reducers'
+import { logout, setMenu } from '../../../store/actions'
 
 import '../../style/2_component/Header.scss'
 
