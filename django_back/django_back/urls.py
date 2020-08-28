@@ -23,13 +23,28 @@ from rest_framework.schemas import get_schema_view
 
 from apps.upload.views import image_upload
 
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+class DocsView(APIView):
+    def get(self, request, *args, **kwargs):
+        apidocs = {'users': request.build_absolute_uri('users/'),
+                   'groups': request.build_absolute_uri('groups/'),
+                   'notes': request.build_absolute_uri('Note/'),
+                   'upload': request.build_absolute_uri('upload/'),
+                   'email': request.build_absolute_uri('Email/send_email'),
+                   }
+        return Response(apidocs)
+
+
 urlpatterns = [
+    path('', DocsView.as_view()),
+    path('', include('apps.UserGroup.urls')),
+    path('upload/', image_upload, name='upload'),
     path('Email/', include('apps.Email.urls')),
     path('Note/', include('apps.Note.urls')),
-    path('', include('apps.UserGroup.urls')),
-    path('upload', image_upload, name='upload'),
-    path('admin/', admin.site.urls),
 
+    path('admin/', admin.site.urls),
     path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     # path(r'$', generic.RedirectView.as_view(url='/api/', permanent=False)),

@@ -6,9 +6,18 @@ from rest_framework.response import Response
 
 
 class EmailView(rest_views.APIView):
-    def get(request, *args, **kwargs):
-        # send_email(request)
-        return Response('nothing', status=200)
+    """
+    Method: POST
+    data:
+    {
+        "recipient": "[email]",
+        "subject": "title",
+        "body": "content"
+    }
+    """
+
+    # def get(self, request, *args, **kwargs):
+    #     return Response('nothing', status=200)
 
     def post(self, request, *args, **kwargs):
         print("POST call")
