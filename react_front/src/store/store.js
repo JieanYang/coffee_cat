@@ -1,7 +1,6 @@
 
 // auth
 import storage from 'redux-persist/es/storage'
-import { apiMiddleware } from './middleware';
 import { createFilter   } from 'redux-persist-transform-filter';
 import { persistReducer } from 'redux-persist'
 import { routerMiddleware } from 'react-router-redux'
@@ -40,7 +39,6 @@ export default function configureStore(preloadedState={}) {
 	  storeEnhancers(
 	    applyMiddleware(
 	    	routerMiddleware(history),
-	    	apiMiddleware,
 	    	forbiddenWordsMiddleware, 
 			initialiseSagaMiddleware,
 			thunk,

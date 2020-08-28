@@ -20,18 +20,6 @@ export const login = (username, password) => ({
   }
 })
 
-export const refreshAccessToken = (token) => ({
-  [RSAA]: {
-    endpoint: APP_BACK_ENDPOINT + '/User/auth/token/obtain/',
-    method: 'POST',
-    body: JSON.stringify({refresh: token}),
-    headers: { 'Content-Type': 'application/json' },
-    types: [
-      TOKEN_REQUEST, TOKEN_RECEIVED, TOKEN_FAILURE
-    ]
-  }
-})
-
 export const logout = () => {
   return { type: LOGOUT }
 };

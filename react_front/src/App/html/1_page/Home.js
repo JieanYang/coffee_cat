@@ -6,7 +6,7 @@ import { echo } from '../../../store/actions'
 class App extends Component {
 
   componentDidMount() {
-      this.props.fetchMessage('Hi, yang!')
+      // this.props.fetchMessage('Hi, yang!')
   }
   
   render() {
