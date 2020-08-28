@@ -11,15 +11,11 @@ from rest_framework.response import Response
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class GroupViewSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
