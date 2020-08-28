@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'apps.upload',
-    'apps.User',
+    'apps.UserGroup',
     'apps.Note',
     'apps.Email'
 ]
@@ -90,12 +90,13 @@ WSGI_APPLICATION = 'django_back.wsgi.application'
 
 # Rest Framwork
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
 }
 

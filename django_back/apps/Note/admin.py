@@ -4,7 +4,7 @@ from .models import Note
 
 
 class NoteAdmin(admin.ModelAdmin):
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'owner']
 
     list_display = ('title',)
 
