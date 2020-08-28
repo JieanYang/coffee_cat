@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode'
-import { LOGIN, LOGOUT } from '../actions'
+import { LOGIN, LOGOUT, AUTH_ERRORS } from '../actions'
 
 const initialState = {
   token: undefined,
@@ -14,6 +14,10 @@ export const authReducer = (state=initialState, action) => {
       }
     case LOGOUT:
       return initialState
+    case AUTH_ERRORS:
+      return {
+        errors: action.payload
+      }
     default:
       return state
     }

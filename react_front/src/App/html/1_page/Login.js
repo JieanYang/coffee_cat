@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router'
 
 import LoginForm from '../2_component/LoginForm';
-import { login } from '../../../store/actions';
+import { login, isAuthenticated } from '../../../store/actions';
 
 import {authErrors} from '../../../store/reducers';
 
@@ -37,7 +37,7 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => ({
 	errors: authErrors(state),
-	isAuthenticated: true
+	isAuthenticated: isAuthenticated(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({

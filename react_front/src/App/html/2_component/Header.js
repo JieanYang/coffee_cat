@@ -6,7 +6,7 @@ import { faHome, faEnvelope, faUser, faAlignLeft, faInfoCircle, faStickyNote } f
 import { Link } from "react-router-dom"
 
 import { authErrors } from '../../../store/reducers'
-import { logout, setMenu } from '../../../store/actions'
+import { logout, setMenu, isAuthenticated } from '../../../store/actions'
 
 import '../../style/2_component/Header.scss'
 
@@ -100,7 +100,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => ({
 	errors: authErrors(state),
-	isAuthenticated: true,
+	isAuthenticated: isAuthenticated(state),
 	menu: state.persist_data.menu
 })
 
