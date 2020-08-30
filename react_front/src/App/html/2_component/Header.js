@@ -13,25 +13,37 @@ import '../../style/2_component/Header.scss'
 const Header = (props) => {
 	// const [scrolling, setScrolling] = useState(false)
 	const [itemSelected, setItemSelected] = useState(props.menu)
-	// const [scrollTop, setScrollTop] = useState(0)
+	const [scrollTop, setScrollTop] = useState(0)
 
-	// useEffect(() => {
-		// const onScroll = e => {
-		// 	setScrollTop(e.target.documentElement.scrollTop)
-		// 	// setScrolling(e.target.documentElement.scrollTop > scrollTop)
-		// 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-		// 			document.getElementById("navbar").style.padding = "30px 10px"
-		// 			document.getElementById("logo").style.fontSize = "25px"
-		// 		} else {
-		// 			document.getElementById("navbar").style.padding = "60px 10px"
-		// 			document.getElementById("logo").style.fontSize = "35px"
-		// 		}
-		// }
+	useEffect(() => {
+		const onScroll = e => {
+			setScrollTop(e.target.documentElement.scrollTop)
+			let itemMeus = document.getElementsByClassName('itemMenu')
+			// setScrolling(e.target.documentElement.scrollTop > scrollTop)
+			if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+				document.getElementById("logo").style.color = "#363636"
+				document.getElementById("navbar").style.backgroundColor = "white"
+				document.getElementById("navbar").style.boxShadow = "0px 0px 12px 0px #d5d5d5"
+				for (let i=0, max=itemMeus.length; i<max; i++) {
+					itemMeus[i].style.color = "#363636"
+					itemMeus[i].getElementsByTagName('svg')[0].style.color="#363636"
+				}
+			} else {
+				document.getElementById("logo").style.color = "white"
+				document.getElementById("navbar").style.backgroundColor = "transparent"
+				document.getElementById("navbar").style.boxShadow = "none"
+				
+				for (let i=0, max=itemMeus.length; i<max; i++) {
+					itemMeus[i].style.color = "white"
+					itemMeus[i].getElementsByTagName('svg')[0].style.color="white"
+				}
+			}
+		}
 
-		// window.addEventListener("scroll", onScroll)
+		window.addEventListener("scroll", onScroll)
 
-		// return () => window.removeEventListener("scroll", onScroll)
-	// }, [scrollTop])
+		return () => window.removeEventListener("scroll", onScroll)
+	}, [scrollTop])
 
 	const handleClickMenuItem = (item) => () => {
 		props.isAuthenticated && props.set_menu(item)
@@ -44,34 +56,34 @@ const Header = (props) => {
 		<>
 			<nav id="navbar" className="flex_row">
 				<div id="navbar-logo" className="flex_item_auto flex_layout_between">
-					<a href="#default" id="logo">CompanyLogo</a>
+					<a href="#default" id="logo">Logo</a>
 				</div>
 				<div id="navbar-right" className="flex_item_auto flex_row flex_layout_flex_end">
-					<Link to="/" className={handleClassActive('Home')} onClick={handleClickMenuItem('Home')}>
+					<Link to="/" className={'itemMenu '+handleClassActive('Home')} onClick={handleClickMenuItem('Home')}>
 					  	<FontAwesomeIcon icon={faHome}/>
 					  	Home
 					</Link> 
-					<Link to="/note" className={handleClassActive('Note')} onClick={handleClickMenuItem('Note')}>
+					<Link to="/note" className={'itemMenu '+handleClassActive('Note')} onClick={handleClickMenuItem('Note')}>
 						<FontAwesomeIcon icon={faStickyNote} />
 						Note
 					</Link>
-					<Link to="/about" className={handleClassActive('About')} onClick={handleClickMenuItem('About')}>
+					<Link to="/about" className={'itemMenu '+handleClassActive('About')} onClick={handleClickMenuItem('About')}>
 						<FontAwesomeIcon icon={faInfoCircle} />
 						About
 					</Link>
-					<Link to="/contact" className={handleClassActive('Contact')} onClick={handleClickMenuItem('Contact')}>
+					<Link to="/contact" className={'itemMenu '+handleClassActive('Contact')} onClick={handleClickMenuItem('Contact')}>
 						<FontAwesomeIcon icon={faEnvelope} />
 						Contact
 					</Link>
-					<Link to="/article" className={handleClassActive('Article')} onClick={handleClickMenuItem('Article')}>
+					<Link to="/article" className={'itemMenu '+handleClassActive('Article')} onClick={handleClickMenuItem('Article')}>
 						<FontAwesomeIcon icon={faAlignLeft} />
 						Article
 					</Link>
-					{!props.isAuthenticated &&  <Link to="/login" className={handleClassActive('Login')} onClick={() => !props.isAuthenticated && setItemSelected('Login')}>
+					{!props.isAuthenticated &&  <Link to="/login" className={'itemMenu '+handleClassActive('Login')} onClick={() => !props.isAuthenticated && setItemSelected('Login')}>
 						<FontAwesomeIcon icon={faUser} />
 						Login
 					</Link>}
-					{props.isAuthenticated && <Link to="/login" className={handleClassActive('Logout')} onClick={() => {
+					{props.isAuthenticated && <Link to="/login" className={'itemMenu '+handleClassActive('Logout')} onClick={() => {
 						props.logout()
 						setItemSelected('Login')
 					}}>
