@@ -20,7 +20,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class GroupViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticated,)
-    
+
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 

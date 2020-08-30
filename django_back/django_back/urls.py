@@ -27,6 +27,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authtoken import views as token_views
 
+
 class DocsView(APIView):
     def get(self, request, *args, **kwargs):
         apidocs = {'users': request.build_absolute_uri('users/'),
@@ -36,7 +37,6 @@ class DocsView(APIView):
                    'email': request.build_absolute_uri('Email/send_email'),
                    }
         return Response(apidocs)
-        
 
 
 urlpatterns = [
