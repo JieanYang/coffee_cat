@@ -28,13 +28,10 @@ export const authErrors = (state) => {
 }
 
 
-export const withAuth = (headers={'Content-Type': 'application/json'}) => {
-  return (state) => {
-    console.log("withAuth", state.auth.token)
-    return {
-      ...headers,
-      'Authorization': `Token ${state.auth.token}`
-    }
+export const withAuth = state => (headers={'Content-Type': 'application/json'}) => {
+  return {
+    ...headers,
+    'Authorization': `Token ${state.auth.token}`
   }
 }
 
