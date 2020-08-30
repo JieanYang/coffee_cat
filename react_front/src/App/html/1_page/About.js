@@ -6,8 +6,7 @@ const About = props => {
   return (
     <>
       <div>
-        <h1>About page</h1>
-        <Cover />
+        <Cover title="About" />
       </div>
     </>
   )

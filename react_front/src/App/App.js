@@ -24,7 +24,7 @@ const App = () => (
   <>
     <Router>
       <Header />
-      <div id="page_content" style={{paddingTop: "170px"}}>
+      <div id="page_content">
         <Switch>
           <Route exact path="/login/" component={Login} />
           <PrivateRoute path="/about/" component={About} />
