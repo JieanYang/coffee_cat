@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react'
 import { connect } from 'react-redux'
-import { echo } from '../../../store/actions'
 
 const Cover = props => {
   return (
     <>
       <div id="cover">
-        <div class="img"></div>
-        <div class="content"></div>
-        <div class="curve"></div>
+        <div class="img">img</div>
+        <div class="content">content</div>
+        <div class="curve">curve</div>
       </div>
     </>
   )
