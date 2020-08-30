@@ -18,6 +18,7 @@ import Contact from "./html/1_page/Contact"
 import Login from "./html/1_page/Login"
 import Home from "./html/1_page/Home"
 import Note from "./html/1_page/Note"
+import About from "./html/1_page/About"
 
 const App = () => (
   <>
@@ -26,7 +27,7 @@ const App = () => (
       <div id="page_content" style={{paddingTop: "170px"}}>
         <Switch>
           <Route exact path="/login/" component={Login} />
-          <PrivateRoute path="/about/" component={() => <h2>About</h2>} />
+          <PrivateRoute path="/about/" component={About} />
           <PrivateRoute path="/contact/" component={Contact} />
           <PrivateRoute path="/article/" component={Article} />
           <PrivateRoute path="/note" component={Note} />
