@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { echo } from '../../../store/actions'
+import Cover from '../2_component/Cover'
 
 
 class App extends Component {
@@ -12,8 +13,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Welcome to React</h2>
-        <p>{this.props.message}</p>
+        <div>
+          <Cover title="Home" />
+        </div>
+        <div>
+          <p>content</p>
+          <p>{this.props.message}</p>
+        </div>
       </div>
     );
   }

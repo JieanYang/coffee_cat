@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router'
 
-import LoginForm from '../2_component/LoginForm';
 import { login } from '../../../store/actions';
 import { authErrors, isAuthenticated } from '../../../store/reducers';
+import LoginForm from '../2_component/LoginForm';
+import Cover from '../2_component/Cover';
 
 const my_login = () => {
 	const [userState, setUserState] = useState("no connect");
@@ -27,8 +28,13 @@ const Login = (props) => {
 		)
 	} else {
 		return (
-			<div className="login-page">
-				<LoginForm {...props} />
+			<div>
+				<div>
+					<Cover title="Login" />
+				</div>
+				<div className="login-page">
+					<LoginForm {...props} />
+				</div>
 			</div>
 		)
 	}

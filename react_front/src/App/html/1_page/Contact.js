@@ -1,14 +1,19 @@
 import React from "react"
 import { connect } from "react-redux";
 import Form from "../3_unit/Form"
+import Cover from "../2_component/Cover"
 
 const Contact = () => {
-    return (
-        <div>
-            <h2>Contact</h2>
-            <Form type="Contact" show_input={['Email_recipient', 'Email_subject', 'body']} />
-        </div>
-    )
+  return (
+    <div>
+      <div>
+        <Cover title="Contact" />
+      </div>
+      <div>
+        <Form type="Contact" show_input={['Email_recipient', 'Email_subject', 'body']} />
+      </div>
+    </div>
+  )
 }
 
 const connectContact = connect(
