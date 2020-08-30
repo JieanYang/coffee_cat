@@ -1,7 +1,6 @@
 
 export * from './auth'
 export * from './echo'
-export * from './email'
 export * from './persist_data'
 
 import { combineReducers } from 'redux'
@@ -15,7 +14,6 @@ const createRootReducer = (history) => combineReducers({
   router: connectRouter(history), 
   articles: articlesReducer, 
   remoteArticles: remoteArticlesReducer,
-  email: emailReducer,
   persist_data: PersistDataReducer
 })
 
