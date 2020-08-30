@@ -1,13 +1,15 @@
 
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addArticle, sendEmail, create_note } from "../../../store/actions";
+import { addArticle, sendEmail, create_note, delete_note, update_note } from "../../../store/actions";
 
 function mapDispatchToProps(dispatch) {
   return {
     addArticle: article => dispatch(addArticle(article)),
     sendEmail: (data) => dispatch(sendEmail(data)),
-    create_note: (data) => dispatch(create_note(data))
+    create_note: (data) => dispatch(create_note(data)),
+    delete_note: id => dispatch(delete_note(id)),
+    update_note: (id, data) => dispatch(update_note(id, data)),
   };
 }
 
@@ -30,20 +32,9 @@ const Form = (props) => {
       props.sendEmail({recipient, subject, body})
     } else if (props.type=='Note') {
       console.log("type note")
-      if (props.action=="POST") {
-        props.create_note({title, content: body})
-      } else if (props.action=="PUT") {
-        console.log("update note")
-        fetch(`${APP_BACK_ENDPOINT}/Note/${id}/`, {
-          method: 'PUT',
-          body: JSON.stringify({title, content: body})
-        })
-      } else if (props.action=="DELETE") {
-        console.log("delete note")
-        fetch(`${APP_BACK_ENDPOINT}/Note/${id}/`, {
-          method: 'DELETE'
-        })
-      }
+      if (props.action=="POST") props.create_note({title, content: body})
+      else if (props.action=="PUT") props.update_note(id, {title, content: body})
+      else if (props.action=="DELETE") props.delete_note(id)
     }
     else console.error('bad input for handleSubmit in Form file')
   }
@@ -55,7 +46,7 @@ const Form = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} autoComplete="off">
       {props.show_input.includes('id') && 
         <>
           <div>
