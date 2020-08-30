@@ -1,12 +1,13 @@
 
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { addArticle, sendEmail } from "../../../store/actions";
+import { addArticle, sendEmail, create_note } from "../../../store/actions";
 
 function mapDispatchToProps(dispatch) {
   return {
     addArticle: article => dispatch(addArticle(article)),
-    sendEmail: (data) => dispatch(sendEmail(data))
+    sendEmail: (data) => dispatch(sendEmail(data)),
+    create_note: (data) => dispatch(create_note(data))
   };
 }
 
@@ -30,10 +31,7 @@ const Form = (props) => {
     } else if (props.type=='Note') {
       console.log("type note")
       if (props.action=="POST") {
-        fetch(APP_BACK_ENDPOINT + '/Note/', {
-          method: 'POST',
-          body: JSON.stringify({title, content: body})
-        })
+        props.create_note({title, content: body})
       } else if (props.action=="PUT") {
         console.log("update note")
         fetch(`${APP_BACK_ENDPOINT}/Note/${id}/`, {

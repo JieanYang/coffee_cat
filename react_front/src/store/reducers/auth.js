@@ -10,7 +10,7 @@ export const authReducer = (state=initialState, action) => {
   switch(action.type) {
     case LOGIN:
       return {
-        token: action.payload
+        token: action.payload.token
       }
     case LOGOUT:
       return initialState
@@ -28,11 +28,14 @@ export const authErrors = (state) => {
 }
 
 
-export const withAuth = (headers={}) => {
-  return (state) => ({
-    ...headers,
-    'Authorization': ``
-  })
+export const withAuth = (headers={'Content-Type': 'application/json'}) => {
+  return (state) => {
+    console.log("withAuth", state.auth.token)
+    return {
+      ...headers,
+      'Authorization': `Token ${state.auth.token}`
+    }
+  }
 }
 
 
