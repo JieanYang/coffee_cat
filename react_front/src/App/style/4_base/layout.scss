@@ -1,0 +1,103 @@
+
+// // 
+// === display setting===
+// //
+
+// .display_inline {
+// 	display: inline;
+// }
+
+// // 
+// === flex setting===
+// //
+.flex_row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.flex_col {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.flex_item_nowrap {
+	flex-wrap: nowrap;
+}
+
+.flex_layout_between {
+	justify-content: space-between;
+}
+
+.flex_layout_space_around {
+	justify-content: space-around;
+}
+
+.flex_layout_flex_end {
+	justify-content: flex-end;
+}
+
+.flex_align_baseline {
+	align-items: baseline;
+}
+
+.flex_item_0 {
+	flex: 0 0 0;
+	padding: 10px;
+}
+
+.flex_item_20 {
+	flex: 1 1 20%;
+	padding: 10px;
+}
+
+.flex_item_25 {
+	flex: 1 1 25%;
+	padding: 10px;
+}
+
+.flex_item_30 {
+	flex: 1 1 30%;
+	padding: 10px;
+}
+
+.flex_item_33 {
+	flex: 1 1 33%;
+	padding: 10px;
+}
+
+.flex_item_50 {
+	flex: 1 1 50%;
+	padding: 10px;
+}
+
+.flex_item_60 {
+	flex: 1 1 60%;
+	padding: 10px;
+}
+
+.flex_item_80 {
+	flex: 1 1 80%;
+	padding: 10px;
+}
+
+.flex_item_auto {
+	flex: 1 1 auto;
+	padding: 10px;
+}
+
+@mixin flex_item_setting($width: auto) {
+	flex: 1 1 $width;
+}
+
+// // 
+// === flex setting===
+// //
+@mixin position_absolute_setting($top: unset, $right: unset, $bottom: unset, $left: unset) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}

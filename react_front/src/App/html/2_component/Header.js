@@ -13,24 +13,25 @@ import '../../style/2_component/Header.scss'
 const Header = (props) => {
 	// const [scrolling, setScrolling] = useState(false)
 	const [itemSelected, setItemSelected] = useState(props.menu)
-	const [scrollTop, setScrollTop] = useState(0)
+	// const [scrollTop, setScrollTop] = useState(0)
 
-	useEffect(() => {
-		const onScroll = e => {
-		setScrollTop(e.target.documentElement.scrollTop)
-		// setScrolling(e.target.documentElement.scrollTop > scrollTop)
-		if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-				document.getElementById("navbar").style.padding = "30px 10px"
-				document.getElementById("logo").style.fontSize = "25px"
-			} else {
-				document.getElementById("navbar").style.padding = "60px 10px"
-				document.getElementById("logo").style.fontSize = "35px"
-			}
-		}
-		window.addEventListener("scroll", onScroll)
+	// useEffect(() => {
+		// const onScroll = e => {
+		// 	setScrollTop(e.target.documentElement.scrollTop)
+		// 	// setScrolling(e.target.documentElement.scrollTop > scrollTop)
+		// 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+		// 			document.getElementById("navbar").style.padding = "30px 10px"
+		// 			document.getElementById("logo").style.fontSize = "25px"
+		// 		} else {
+		// 			document.getElementById("navbar").style.padding = "60px 10px"
+		// 			document.getElementById("logo").style.fontSize = "35px"
+		// 		}
+		// }
 
-		return () => window.removeEventListener("scroll", onScroll)
-	}, [scrollTop])
+		// window.addEventListener("scroll", onScroll)
+
+		// return () => window.removeEventListener("scroll", onScroll)
+	// }, [scrollTop])
 
 	const handleClickMenuItem = (item) => () => {
 		props.isAuthenticated && props.set_menu(item)
@@ -41,9 +42,11 @@ const Header = (props) => {
 
 	return (
 		<>
-			<nav id="navbar">
-				<a href="#default" id="logo">CompanyLogo</a>
-				<div id="navbar-right">
+			<nav id="navbar" className="flex_row">
+				<div id="navbar-logo" className="flex_item_auto flex_layout_between">
+					<a href="#default" id="logo">CompanyLogo</a>
+				</div>
+				<div id="navbar-right" className="flex_item_auto flex_row flex_layout_flex_end">
 					<Link to="/" className={handleClassActive('Home')} onClick={handleClickMenuItem('Home')}>
 					  	<FontAwesomeIcon icon={faHome}/>
 					  	Home
