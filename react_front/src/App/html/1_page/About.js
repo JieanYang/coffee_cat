@@ -8,6 +8,7 @@ const About = props => {
       <div>
         <Cover title="About" />
       </div>
+      <p>content</p>
     </>
   )
 }

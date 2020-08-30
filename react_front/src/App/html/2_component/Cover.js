@@ -6,11 +6,20 @@ const Cover = props => {
   return (
     <>
       <div id="component_cover">
-        <div class="img"></div>
-        <div class="content">
-          <h1>{props.title}</h1>
+        <div className="img">
+          <div className="content flex_row flex_layout_space_around flex_align_center">
+            <div>
+              <div className="icons"></div>
+              <div className="text">
+                <h2>{props.title}</h2>
+              </div>
+              <div className="buttons"></div>
+
+              
+            </div>
+          </div>
         </div>
-        <div class="curve">curve</div>
+        <div className="curve"></div>
       </div>
     </>
   )
