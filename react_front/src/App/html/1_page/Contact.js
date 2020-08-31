@@ -9,7 +9,7 @@ const Contact = () => {
       <div>
         <Cover title="Contact" />
       </div>
-      <div>
+      <div style={{padding: "30px 0"}}>
         <Form type="Contact" show_input={['Email_recipient', 'Email_subject', 'body']} />
       </div>
     </div>
