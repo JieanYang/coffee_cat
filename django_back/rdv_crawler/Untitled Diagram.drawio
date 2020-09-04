@@ -1,1 +1,150 @@
-<mxfile host="app.diagrams.net" modified="2020-09-04T13:18:36.299Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36" version="13.6.6" etag="WPpBGJA5JE4tTi8Alcxb" type="github"><diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">7Zxdk+IoFIZ/jZdt5dvkcuzp6bmYqepat2ovt1AxZicGi2Cr++uXGMi3im4i0NPeqASBPOdweE+ge2Q/bw6vGGzXP9ESxiPLWB5G9teRZZmO7dC3rOSYlzhBkBeEOFqySmXBLPoXskKDle6iJUxrFQlCMYm29cIFShK4ILUygDHa16utUFzvdQtC2CqYLUDcLv0rWpJ1Xuq7Rln+HUbhmvdsGuzKHCx+hRjtEtbfyLJXp1d+eQN4W6x+ugZLtK8U2S8j+xkjRPJPm8MzjDO2HFv+u29nrhbjxjAhIj+YAN9ZwPnCXMKV5zpPrIF3EO8gv4PTOMmRs6FD3mYfN4cwM/54vt0kY1Y4XZNNTK+Z9OM7xCSiSH+AOYzfUBqRCCX02hwRgja0QpxdmBbAnlGM8KkLjqxs40schdlvCdrS0i3E0QYSmNWmt0OdAr6VRVO0I3GUZENMCUiWANN7nabHzRxlQwthAjGgn6ZtVvzuaa/wUCli7F4hon3gI63Crloes+ORf3fz7/vSa7jTrCsOw8sA89OwaLm0Ff3AzCVmOqtluj9B+uus+eCBjmV6Ig+XzGQV6+3XEYGzLVhkdffU0P0As5vAOIkKMNPqIOYPQMzWgZhrK0TMuSE8wDQ9RdlOMBVuPTByjDojc9Kehk4HInsARK6aiNyJOog8cURreABhtmxcQ1RdE9iPqmtCHwQbocvuIOg9KNZPrhOssOEwt/Eu7WRxzkDCbIyxW/eudohy2mR4GYYxINF7XXt14WL9v6GIjrzonNNgfT/xZnkLaLVKIWnhLu7iLgv4Oq4dTofLPmztCG4IjEpIS7xGm/kurYaRmrwPAYF7cKwpzgRlb6XapOYDcQzj130/FvWC+kRzgrYaeJTgNNuKc7abP71htKAL26WA1OXu9bnRA6pgopBwMttas9eIXdjiM2Sft0Fbvf4BFzC7C9m+OvFV8lUBCdvhq6WaFXBXR5hQhUAXgJ4csu6Pk0d4Y1sFKxM5jcYiI1M2mAJat1M3ELpq479TAjC5/syogjhuiAqc35+IpgBMS8RwRcTmwc1Kux2m7QtZ2/8N02ZjjWjYd5iJ0ZbWqkwMswhBPFBInRn3KmotZoZ/s3E+/MzgjqWggDENV6GZUYx/OAVT2OL3VTAcqqr5X0PFyPXIgfO/whaf+d95G9yye/H5BOqsBnLVeQRl3bCVoIZJL+5Xw2S4rWrTDoym3cZG9eXJM+MtOd4DN838htyXuWlmtdMiJRiZhqkQpHZKpJIk8RpbiJ4rUZLY7WyiX0kS3Irn95Mk9i3nrR44qSfG9WzuUXPabqcZSjAyjcaC6gcSIQnkF1IgNU/ISYWk6PGlwHHVYaTo+aUmI1cmI6+FBC5DOGNfESZrFKIExC9laUVMGHU4/0BCjuwINNgRlGUERQs/UJZBXIaYoh1ewO6h8sPTAIfw3DqdV8nu4KIhhNfXu7FOZGClOdeX7MT4qEidacm3KBv1qcm7sDs6Yfc/DHb3OnZbGeyBNkHE0ggrXwM0wGoKRAlTmTDhmDLADhIm+OOmi+AdZcC3BZi24H2tPN7WJ5QIhGird4/ufpBi0vxlHFReZw4T8RbzMbNGSmtR7wPHSrVtViG92G3jDF1gNKyfN9nXsxvH0cc9PBnucfe8c/UBKxDQFAKrT95qiWRQnjJgpWSud4G1r3NVB6uUzPQurAIB1lcGqz6Zp0B4DVTB6uqTeQbXsfaf/9yl6ibWY0WdKyXLHcqIljqT4+MksXzPVhPwt2wMKnFCSsVDb37jD2k9/reFEg5Lufrkna6A2uT+KHmh8RunGn12wH+whUafJFfEimbvSUMvVnSHtqKUjHqYZU1g86x/K98dBPVJDS0BoeYqs3/m6pMc8pXj4upiqALWk5IeDhMqRB7O9b6s3w3+42xc2np5vJT9s2HAi0ggZR7wefpkCNxblQBLv5b/eTNXh+W/N7Vf/gM=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-09-04T13:43:20.550Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36" etag="2wWOQvvs70nVp8R81dkJ" version="13.6.6" type="github">
+  <diagram name="Page-1" id="2a216829-ef6e-dabb-86c1-c78162f3ba2b">
+    <mxGraphModel dx="2076" dy="1096" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7a84cebc1def654-1" value="" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;perimeter=ellipsePerimeter;outline=standard;symbol=general;" parent="1" vertex="1">
+          <mxGeometry x="260" y="265" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-2" value="用户网页注册" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="360" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-3" value="Google Forms填写" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="530" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-4" value="" style="shape=message;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="175" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-5" value="" style="shape=message;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="570" y="175" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7a84cebc1def654-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1390" y="289.8571428571429" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7a84cebc1def654-12" target="IsLOzm8ckDeH0rPqSsLd-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-12" value="用户收到爬虫运行确认信息" style="html=1;whiteSpace=wrap;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="1170" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-41" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7a84cebc1def654-14" target="7a84cebc1def654-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-14" value="支付" style="html=1;whiteSpace=wrap;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="940" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-15" value="" style="html=1;shape=message;" parent="7a84cebc1def654-14" vertex="1">
+          <mxGeometry width="20" height="14" relative="1" as="geometry">
+            <mxPoint x="7" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7a84cebc1def654-27" value="" style="shape=message;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="980" y="175" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-28" value="" style="shape=message;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1210" y="175" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="7a84cebc1def654-1" target="7a84cebc1def654-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=none;endFill=0;" parent="1" source="7a84cebc1def654-4" target="7a84cebc1def654-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=none;endFill=0;" parent="1" source="7a84cebc1def654-5" target="7a84cebc1def654-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;" parent="1" source="7a84cebc1def654-2" target="7a84cebc1def654-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=none;endFill=0;" parent="1" source="7a84cebc1def654-27" target="7a84cebc1def654-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7a84cebc1def654-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;endArrow=none;endFill=0;" parent="1" source="7a84cebc1def654-28" target="7a84cebc1def654-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-10" value="用户登录账号，可以看到最近爬虫链接结果" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="395" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-11" value="" style="html=1;shape=plus;" vertex="1" parent="IsLOzm8ckDeH0rPqSsLd-10">
+          <mxGeometry x="0.5" y="1" width="14" height="14" relative="1" as="geometry">
+            <mxPoint x="-7" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsLOzm8ckDeH0rPqSsLd-13" target="IsLOzm8ckDeH0rPqSsLd-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-13" value="爬虫监控到RDV dispo" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1385" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-14" value="" style="shape=mxgraph.bpmn.timer_start;perimeter=ellipsePerimeter;html=1;labelPosition=right;labelBackgroundColor=#ffffff;align=left;" vertex="1" parent="IsLOzm8ckDeH0rPqSsLd-13">
+          <mxGeometry x="1" width="30" height="30" relative="1" as="geometry">
+            <mxPoint x="-15" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="IsLOzm8ckDeH0rPqSsLd-17" target="IsLOzm8ckDeH0rPqSsLd-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-17" value="" style="shape=message;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1425" y="175" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IsLOzm8ckDeH0rPqSsLd-21" target="IsLOzm8ckDeH0rPqSsLd-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsLOzm8ckDeH0rPqSsLd-21" target="IsLOzm8ckDeH0rPqSsLd-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-21" value="用户自己去申请rdv" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-22" value="" style="shape=mxgraph.bpmn.timer_start;perimeter=ellipsePerimeter;html=1;labelPosition=right;labelBackgroundColor=#ffffff;align=left;" vertex="1" parent="IsLOzm8ckDeH0rPqSsLd-21">
+          <mxGeometry x="1" width="30" height="30" relative="1" as="geometry">
+            <mxPoint x="-15" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-25" value="用户自己关闭提醒，或者自动一个月内关闭用户爬虫" style="html=1;whiteSpace=wrap;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1800" y="250" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-26" value="" style="shape=mxgraph.bpmn.timer_start;perimeter=ellipsePerimeter;html=1;labelPosition=right;labelBackgroundColor=#ffffff;align=left;" vertex="1" parent="IsLOzm8ckDeH0rPqSsLd-25">
+          <mxGeometry x="1" width="30" height="30" relative="1" as="geometry">
+            <mxPoint x="-15" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" target="IsLOzm8ckDeH0rPqSsLd-34" source="7a84cebc1def654-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="290" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-31" value="可以" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="IsLOzm8ckDeH0rPqSsLd-34" target="7a84cebc1def654-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="IsLOzm8ckDeH0rPqSsLd-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="785" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-33" value="不可以" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="IsLOzm8ckDeH0rPqSsLd-32">
+          <mxGeometry x="-0.1942" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-34" value="人工确认RDV爬虫在Prod环境运行" style="shape=mxgraph.bpmn.shape;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;perimeter=rhombusPerimeter;background=gateway;outline=none;symbol=parallelGw;" vertex="1" parent="1">
+          <mxGeometry x="760" y="265" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-39" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.571;entryY=0.405;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="IsLOzm8ckDeH0rPqSsLd-37" target="IsLOzm8ckDeH0rPqSsLd-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-37" value="告知用户服务没开通" style="shape=ext;rounded=1;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="730" y="530" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="IsLOzm8ckDeH0rPqSsLd-38" value="" style="shape=message;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="690" width="40" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
