@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import routers
 from .views import OrderViewSet, ProductViewSet, PrefectureViewSet, Order_Product_Prefecture_RelationshipViewSet
 
+
 class RdvView(APIView):
   """
     Api for order, product, prefecture and order_product_prefecture_relationship
@@ -16,6 +17,7 @@ class RdvView(APIView):
       'order_product_prefecture_relationship': request.build_absolute_uri('order_product_prefecture_relationship/')
     }
     return Response(apidocs)
+
 
 app_name = 'Rdv'
 router = routers.DefaultRouter()
