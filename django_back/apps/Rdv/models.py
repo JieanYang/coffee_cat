@@ -12,8 +12,8 @@ class Order(models.Model):
 
 
 class Product(models.Model):
-  name = models.CharField(max_length=200)
-  url = models.CharField(max_length=200)
+  name = models.CharField(max_length=30)
+  url = models.CharField(max_length=100)
   price = models.IntegerField()
   STATUS = (
     ('1', 'status 1'),
@@ -21,5 +21,20 @@ class Product(models.Model):
     ('3', 'status 3'),
   )
   created = models.DateTimeField(auto_now_add=True)
+  orders = models.ManyToManyField(Order, through='Order_Product')
 
+
+class Prefecture(models.Model):
+  name = models.CharField(max_length=30)
+  STATUS = (
+    ('A', 'Available'),
+    ('C', 'Close'),
+  )
+
+
+class Order_Product(models.Model):
+  order = models.ForeignKey(Order, related_name='order_product', on_delete=models.CASCADE)
+  product = models.ForeignKey(Product, related_name='order_product', on_delete=models.CASCADE)
+  quantity = models.IntegerField()
+  prefecture = models.ForeignKey(Prefecture, related_name='order_product', on_delete=models.CASCADE)
 
