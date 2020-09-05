@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Order, Product, Prefecture
+from .models import Order, Product, Prefecture, Order_Product_Prefecture_Relationship
 
 
 class OrderSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,4 +27,16 @@ class PrefectureSerializer(serializers.HyperlinkedModelSerializer):
     fields = ('id', 'url', 'name', 'status')
     extra_kwargs = {
       'url': {'view_name': 'Rdv:prefecture-detail'},
+    }
+
+
+class Order_Product_Prefecture_RelationshipSerializer(serializers.HyperlinkedModelSerializer):
+  class Meta:
+    model = Order_Product_Prefecture_Relationship
+    fields = ('id', 'url', 'order', 'product', 'prefecture', 'quantity')
+    extra_kwargs = {
+      'url': {'view_name': 'Rdv:order_product_prefecture_relationship-detail'},
+      'order': {'view_name': 'Rdv:order-detail'},
+      'product': {'view_name': 'Rdv:product-detail'},
+      'prefecture': {'view_name': 'Rdv:prefecture-detail'},
     }

@@ -1,5 +1,5 @@
-from .models import Order, Product, Prefecture
-from .serializers import OrderSerializer, ProductSerializer, PrefectureSerializer
+from .models import Order, Product, Prefecture, Order_Product_Prefecture_Relationship
+from .serializers import OrderSerializer, ProductSerializer, PrefectureSerializer, Order_Product_Prefecture_RelationshipSerializer
 from rest_framework import viewsets
 
 
@@ -16,3 +16,8 @@ class ProductViewSet(viewsets.ModelViewSet):
 class PrefectureViewSet(viewsets.ModelViewSet):
   queryset = Prefecture.objects.all()
   serializer_class = PrefectureSerializer
+
+
+class Order_Product_Prefecture_RelationshipViewSet(viewsets.ModelViewSet):
+  queryset = Order_Product_Prefecture_Relationship.objects.all()
+  serializer_class = Order_Product_Prefecture_RelationshipSerializer
