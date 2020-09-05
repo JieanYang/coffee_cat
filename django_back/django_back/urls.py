@@ -30,21 +30,25 @@ from rest_framework.authtoken import views as token_views
 
 class DocsView(APIView):
     def get(self, request, *args, **kwargs):
-        apidocs = {'users': request.build_absolute_uri('users/'),
-                   'groups': request.build_absolute_uri('groups/'),
-                   'notes': request.build_absolute_uri('Note/'),
-                   'upload': request.build_absolute_uri('upload/'),
-                   'email': request.build_absolute_uri('Email/send_email'),
-                   }
+        apidocs = {
+            'users': request.build_absolute_uri('users/'),
+            'groups': request.build_absolute_uri('groups/'),
+            'notes': request.build_absolute_uri('Note/'),
+            'upload': request.build_absolute_uri('upload/'),
+            'email': request.build_absolute_uri('Email/send_email'),
+            'Rdv': request.build_absolute_uri('Rdv/'),
+        }
         return Response(apidocs)
 
 
 urlpatterns = [
     path('', DocsView.as_view()),
-    path('', include('apps.UserGroup.urls')),
+    path('Note/', include('apps.Note.urls')),
     path('upload/', image_upload, name='upload'),
     path('Email/', include('apps.Email.urls')),
-    path('Note/', include('apps.Note.urls')),
+
+    path('', include('apps.UserGroup.urls')),
+    path('Rdv/', include('apps.Rdv.urls')),
 
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),

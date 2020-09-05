@@ -16,7 +16,7 @@ class Order(models.Model):
 
 class Product(models.Model):
   name = models.CharField(max_length=30)
-  url = models.CharField(max_length=100)
+  link = models.CharField(max_length=100)
   price = models.IntegerField()
   status = models.CharField(max_length=1, choices=STATUS, default='1')
   created = models.DateTimeField(auto_now_add=True)
