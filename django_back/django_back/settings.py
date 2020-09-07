@@ -49,12 +49,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'django_celery_results',
 
     'apps.upload',
     'apps.UserGroup',
     'apps.Note',
     'apps.Email',
-    'apps.Rdv'
+    'apps.Rdv',
+    'apps.demo_celery'
 ]
 
 MIDDLEWARE = [
@@ -173,3 +175,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
+
+
+# Celery setting
+CELERY_BROKER_URL = "amqp://admin:admin@rabbitmq:5672/django_back"
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+
+# Email setting
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rdv.reminder666@gmail.com'
+EMAIL_HOST_PASSWORD = 'Pascalc4!'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
