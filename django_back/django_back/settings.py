@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'apps.UserGroup',
     'apps.Note',
     'apps.Email',
-    'apps.Rdv'
+    'apps.Rdv',
+    'apps.demo_celery'
 ]
 
 MIDDLEWARE = [
@@ -173,3 +174,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
+
+
+# Celery setting
+CELERY_BROKER_URL = "amqp://admin:admin@localhost:5672/django_back"
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'

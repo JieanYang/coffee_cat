@@ -50,6 +50,8 @@ urlpatterns = [
     path('', include('apps.UserGroup.urls')),
     path('Rdv/', include('apps.Rdv.urls')),
 
+    path('celery', include('apps.demo_celery.urls')),
+
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api-token-auth/', token_views.obtain_auth_token)
