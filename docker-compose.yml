@@ -28,7 +28,9 @@ services:
     container_name: celery_worker
     image: django_image
     command: >
-      sh -c "celery worker -A django_back -l info "
+      sh -c "celery worker -A django_back -l info"
+    env_file:
+      - ./.env.dev
     depends_on:
       - django
       - rabbitmq
