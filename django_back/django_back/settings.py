@@ -180,3 +180,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 CELERY_BROKER_URL = "amqp://admin:admin@rabbitmq:5672/django_back"
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
+
+# Email setting
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rdv.reminder666@gmail.com'
+EMAIL_HOST_PASSWORD = 'Pascalc4!'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
