@@ -23,12 +23,22 @@ services:
       - "3000:3000"
     depends_on:
       - django
+  
+  worker:
+    container_name: celery_worker
+    image: django_image
+    command: >
+      sh -c "celery worker -A django_back -l info "
+    depends_on:
+      - django
+      - rabbitmq
 
   django:
     container_name: back
     build: 
       context: ./django_back
       dockerfile: Dockerfile
+    image: django_image
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./django_back/:/usr/src/app/
