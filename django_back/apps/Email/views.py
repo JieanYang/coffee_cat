@@ -24,6 +24,5 @@ class EmailView(rest_views.APIView):
     def post(self, request, *args, **kwargs):
         print("POST call")
         print(request.data)
-        # send_email(request, **request.data)
         send_email_task.delay(**request.data)
         return Response('successfully sent the mail', status=200)
