@@ -177,6 +177,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
 
 # Celery setting
-CELERY_BROKER_URL = "amqp://admin:admin@localhost:5672/django_back"
+CELERY_BROKER_URL = "amqp://admin:admin@rabbitmq:5672/django_back"
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'

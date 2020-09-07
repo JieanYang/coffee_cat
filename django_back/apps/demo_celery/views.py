@@ -4,5 +4,5 @@ from .tasks import sleepy
 
 
 def index(request):
-  sleepy(3)
+  sleepy.delay(10)
   return HttpResponse('Done!')
