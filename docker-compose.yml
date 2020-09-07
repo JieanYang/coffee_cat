@@ -38,6 +38,7 @@ services:
       - ./.env.dev
     depends_on:
       - postgres
+      - rabbitmq
 
   postgres:
     container_name: db
@@ -51,5 +52,20 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    environment:
+      # RABBITMQ_ERLANG_COOKIE: ""
+      - RABBITMQ_DEFAULT_VHOST=django_back
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+
 volumes:
   postgres_data:
+  rabbitmq_data:
